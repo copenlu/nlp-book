@@ -6,7 +6,7 @@
 # ```{image} ../img/karolina_featured.png
 # :alt: Karolina
 # :class: bg-primary mb-1
-# :width: 200px
+# :width: 300px
 # :align: center
 # ```
 
@@ -172,7 +172,7 @@ nltk.tokenize.word_tokenize(text)
 # #### Uploading files from your local file system
 # files.upload returns a dictionary of the files which were uploaded. The dictionary is keyed by the file name and values are the data which were uploaded.
 
-# In[ ]:
+# In[10]:
 
 
 # this code cell has to be run in Colab environment
