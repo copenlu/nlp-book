@@ -1,4 +1,4 @@
-# Welcome to NDAK18000U (Natural Language Processing) course!
+# Welcome to NDAK18000U course!
 
 
 Have you ever wondered how to build a system that can process, understand or generate text automatically? For instance, to translate between languages, answer questions, or recognise the names of people in text? Then this course is for you.
