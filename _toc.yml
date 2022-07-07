@@ -6,7 +6,7 @@ root: intro
 parts:
   - caption: Weeks
     chapters:
-    - file: markdown
+    - file: week1/week_1_overview
       sections:
         - file: week1/intro_short
         - file: week1/lab_1
