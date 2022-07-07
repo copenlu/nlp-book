@@ -3,7 +3,17 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+parts:
+  - caption: Weeks
+    chapters:
+    - file: markdown
+    - file: markdown
+      sections:
+        - file: notebooks
+        - file: markdown-notebooks
+        
+  - caption: External Material
+    chapters:
+    - file: markdown
+    - file: notebooks
+    - file: markdown-notebooks
