@@ -1,0 +1,644 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Tokenization Exercises - Solutions &#8212; Stat-NLP Book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_copenlu.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Stat-NLP Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to NDAK18000U course!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Weeks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../markdown.html">
+   Markdown Files
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week1/lab_1.html">
+     Lab 1
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  External Material
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../markdown-notebooks.html">
+   Notebooks with MyST Markdown
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/exercises/tokenization_solutions.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexercises/tokenization_solutions.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/exercises/tokenization_solutions.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-green-setup-1-font-load-libraries">
+   <font color="green">
+    Setup 1
+   </font>
+   : Load Libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-blue-task-1-solution-font">
+   <font color="blue">
+    Task 1 solution
+   </font>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-blue-task-2-solution-font">
+   <font color="blue">
+    Task 2 solution
+   </font>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-blue-task-3-solution-font">
+   <font color="blue">
+    Task 3 solution
+   </font>
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Tokenization Exercises - Solutions</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-green-setup-1-font-load-libraries">
+   <font color="green">
+    Setup 1
+   </font>
+   : Load Libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-blue-task-1-solution-font">
+   <font color="blue">
+    Task 1 solution
+   </font>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-blue-task-2-solution-font">
+   <font color="blue">
+    Task 2 solution
+   </font>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-blue-task-3-solution-font">
+   <font color="blue">
+    Task 3 solution
+   </font>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="tokenization-exercises-solutions">
+<h1>Tokenization Exercises - Solutions<a class="headerlink" href="#tokenization-exercises-solutions" title="Permalink to this headline">#</a></h1>
+<p>In the lecture we took a look at a simple tokenizer and sentence segmenter. In this exercise we will expand our understanding of the problem by asking a few important questions, and looking at the problem from a different perspectives.</p>
+<section id="font-color-green-setup-1-font-load-libraries">
+<h2><font color='green'>Setup 1</font>: Load Libraries<a class="headerlink" href="#font-color-green-setup-1-font-load-libraries" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="font-color-blue-task-1-solution-font">
+<h2><font color='blue'>Task 1 solution</font><a class="headerlink" href="#font-color-blue-task-1-solution-font" title="Permalink to this headline">#</a></h2>
+<p>To tokenise the following text:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;&#39;Curiouser and curiouser!&#39; cried Alice (she was so much surprised, that for the moment she quite</span>
+<span class="s2">forgot how to speak good English); &#39;now I&#39;m opening out like the largest telescope that ever was! Good-bye,</span>
+<span class="s2">feet!&#39; (for when she looked down at her feet, they seemed to be almost out of sight, they were getting so far</span>
+<span class="s2">off). &#39;Oh, my poor little feet, I wonder who will put on your shoes and stockings for you now, dears? I&#39;m sure I</span>
+<span class="s2">shan&#39;t be able! I shall be a great deal too far off to trouble myself about you: you must manage the best</span>
+<span class="s2">way you can; —but I must be kind to them,&#39; thought Alice, &#39;or perhaps they won&#39;t walk the way I want to go!</span>
+<span class="s2">Let me see: I&#39;ll give them a new pair of boots every Christmas.&#39;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We need to expand the list of tokens a bit to account for:</p>
+<ul class="simple">
+<li><p>additional characters like ! ( ) , ; — - (notice the difference in the last two dashes)</p></li>
+<li><p>separation of <code class="docutils literal notranslate"><span class="pre">n't</span></code> from the rest of the word (question: why?)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'ll</span></code> <code class="docutils literal notranslate"><span class="pre">'m</span></code> (question: why?)</p></li>
+</ul>
+<p>Should you need additional help on regular expressions, check <a class="reference external" href="https://regex101.com/">https://regex101.com/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">token</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;[\w]+(?=n&#39;t)|n&#39;t|</span><span class="se">\&#39;</span><span class="s2">m|</span><span class="se">\&#39;</span><span class="s2">ll|[\w]+|[.?!;,\-\(\)—\:&#39;]&quot;</span><span class="p">)</span>
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">token</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tokens</span><span class="p">[:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&quot;&#39;&quot;, &#39;Curiouser&#39;, &#39;and&#39;, &#39;curiouser&#39;, &#39;!&#39;, &quot;&#39;&quot;, &#39;cried&#39;, &#39;Alice&#39;, &#39;(&#39;, &#39;she&#39;, &#39;was&#39;, &#39;so&#39;, &#39;much&#39;, &#39;surprised&#39;, &#39;,&#39;, &#39;that&#39;, &#39;for&#39;, &#39;the&#39;, &#39;moment&#39;, &#39;she&#39;, &#39;quite&#39;, &#39;forgot&#39;, &#39;how&#39;, &#39;to&#39;, &#39;speak&#39;, &#39;good&#39;, &#39;English&#39;, &#39;)&#39;, &#39;;&#39;, &quot;&#39;&quot;, &#39;now&#39;, &#39;I&#39;, &quot;&#39;m&quot;, &#39;opening&#39;, &#39;out&#39;, &#39;like&#39;, &#39;the&#39;, &#39;largest&#39;, &#39;telescope&#39;, &#39;that&#39;, &#39;ever&#39;, &#39;was&#39;, &#39;!&#39;, &#39;Good&#39;, &#39;-&#39;, &#39;bye&#39;, &#39;,&#39;, &#39;feet&#39;, &#39;!&#39;, &quot;&#39;&quot;, &#39;(&#39;, &#39;for&#39;, &#39;when&#39;, &#39;she&#39;, &#39;looked&#39;, &#39;down&#39;, &#39;at&#39;, &#39;her&#39;, &#39;feet&#39;, &#39;,&#39;, &#39;they&#39;, &#39;seemed&#39;, &#39;to&#39;, &#39;be&#39;, &#39;almost&#39;, &#39;out&#39;, &#39;of&#39;, &#39;sight&#39;, &#39;,&#39;, &#39;they&#39;, &#39;were&#39;, &#39;getting&#39;, &#39;so&#39;, &#39;far&#39;, &#39;off&#39;, &#39;)&#39;, &#39;.&#39;, &quot;&#39;&quot;, &#39;Oh&#39;, &#39;,&#39;, &#39;my&#39;, &#39;poor&#39;, &#39;little&#39;, &#39;feet&#39;, &#39;,&#39;, &#39;I&#39;, &#39;wonder&#39;, &#39;who&#39;, &#39;will&#39;, &#39;put&#39;, &#39;on&#39;, &#39;your&#39;, &#39;shoes&#39;, &#39;and&#39;, &#39;stockings&#39;, &#39;for&#39;, &#39;you&#39;, &#39;now&#39;, &#39;,&#39;, &#39;dears&#39;, &#39;?&#39;, &#39;I&#39;, &quot;&#39;m&quot;, &#39;sure&#39;, &#39;I&#39;, &#39;sha&#39;, &quot;n&#39;t&quot;, &#39;be&#39;, &#39;able&#39;, &#39;!&#39;, &#39;I&#39;, &#39;shall&#39;, &#39;be&#39;, &#39;a&#39;, &#39;great&#39;, &#39;deal&#39;, &#39;too&#39;, &#39;far&#39;, &#39;off&#39;, &#39;to&#39;, &#39;trouble&#39;, &#39;myself&#39;, &#39;about&#39;, &#39;you&#39;, &#39;:&#39;, &#39;you&#39;, &#39;must&#39;, &#39;manage&#39;, &#39;the&#39;, &#39;best&#39;, &#39;way&#39;, &#39;you&#39;, &#39;can&#39;, &#39;;&#39;, &#39;—&#39;, &#39;but&#39;, &#39;I&#39;, &#39;must&#39;, &#39;be&#39;, &#39;kind&#39;, &#39;to&#39;, &#39;them&#39;, &#39;,&#39;, &quot;&#39;&quot;, &#39;thought&#39;, &#39;Alice&#39;, &#39;,&#39;, &quot;&#39;&quot;, &#39;or&#39;, &#39;perhaps&#39;, &#39;they&#39;, &#39;wo&#39;, &quot;n&#39;t&quot;, &#39;walk&#39;, &#39;the&#39;, &#39;way&#39;, &#39;I&#39;, &#39;want&#39;, &#39;to&#39;, &#39;go&#39;, &#39;!&#39;, &#39;Let&#39;, &#39;me&#39;, &#39;see&#39;, &#39;:&#39;, &#39;I&#39;, &quot;&#39;ll&quot;, &#39;give&#39;, &#39;them&#39;, &#39;a&#39;, &#39;new&#39;, &#39;pair&#39;, &#39;of&#39;, &#39;boots&#39;, &#39;every&#39;, &#39;Christmas&#39;, &#39;.&#39;, &quot;&#39;&quot;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="font-color-blue-task-2-solution-font">
+<h2><font color='blue'>Task 2 solution</font><a class="headerlink" href="#font-color-blue-task-2-solution-font" title="Permalink to this headline">#</a></h2>
+<p>The following token from <a class="reference external" href="https://twitter.com/IAugenstein/status/766628888843812864">UCLMR tweet</a>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tweet</span> <span class="o">=</span> <span class="s2">&quot;#emnlp2016 paper on numerical grounding for error correction http://arxiv.org/abs/1608.04147  @geospith @riedelcastro #NLProc&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>can be tokenised in various ways, but the main objective here is to ‘catch’ hashtags, mentions and URLs. Hashtags and mentions can be extracted easily by just simply adding <code class="docutils literal notranslate"><span class="pre">#</span></code> and <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> to the regular expression part which catches alphanumeric sequences.</p>
+<p>However, catching URLs is a bit more tricky, and the minimum working example for this case would be the coded example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hashtags and user mentions should be included, as well as the hyperlinks - there are more elaborate URL regular expressions, but this one will do for now</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;http://[a-zA-Z0-9./]+|[@#\w]+&#39;</span><span class="p">)</span>
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">token</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">tweet</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;#emnlp2016&#39;, &#39;paper&#39;, &#39;on&#39;, &#39;numerical&#39;, &#39;grounding&#39;, &#39;for&#39;, &#39;error&#39;, &#39;correction&#39;, &#39;http://arxiv.org/abs/1608.04147&#39;, &#39;@geospith&#39;, &#39;@riedelcastro&#39;, &#39;#NLProc&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, bear in mind that this is far from a correct solution for capturing URLs, and that many valid URLs would not be correctly caught with this expression (think https, querystrings, etc.)</p>
+</section>
+<section id="font-color-blue-task-3-solution-font">
+<h2><font color='blue'>Task 3 solution</font><a class="headerlink" href="#font-color-blue-task-3-solution-font" title="Permalink to this headline">#</a></h2>
+<p>We first make sure to account for:</p>
+<ul class="simple">
+<li><p>URLs</p></li>
+<li><p>abbreviations (U.S.A., <a class="reference external" href="http://M.Sc">M.Sc</a>., etc.)</p></li>
+<li><p>elipsis (…)</p></li>
+<li><p>question and exclamation mark, and their composition as a single token</p></li>
+</ul>
+<p>We modify the tokeniser accordingly and check to verify we’re happy with the tokenisation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch is the longest official one-word placename in U.K. Isn&#39;t that weird? I mean, someone took the effort to really make this name as complicated as possible, huh?! Of course, U.S.A. also has its own record in the longest name, albeit a bit shorter... This record belongs to the place called Chargoggagoggmanchauggagoggchaubunagungamaugg. There&#39;s so many wonderful little details one can find out while browsing http://www.wikipedia.org during their Ph.D. or an M.Sc.&quot;&quot;&quot;</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;http://[a-zA-Z0-9./]+|(?:[A-Za-z]{1,2}\.)+|[\w</span><span class="se">\&#39;</span><span class="s1">]+|\.\.\.|\?\!|[.?!]&#39;</span><span class="p">)</span>
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">token</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch&#39;, &#39;is&#39;, &#39;the&#39;, &#39;longest&#39;, &#39;official&#39;, &#39;one&#39;, &#39;word&#39;, &#39;placename&#39;, &#39;in&#39;, &#39;U.K.&#39;, &quot;Isn&#39;t&quot;, &#39;that&#39;, &#39;weird&#39;, &#39;?&#39;, &#39;I&#39;, &#39;mean&#39;, &#39;someone&#39;, &#39;took&#39;, &#39;the&#39;, &#39;effort&#39;, &#39;to&#39;, &#39;really&#39;, &#39;make&#39;, &#39;this&#39;, &#39;name&#39;, &#39;as&#39;, &#39;complicated&#39;, &#39;as&#39;, &#39;possible&#39;, &#39;huh&#39;, &#39;?!&#39;, &#39;Of&#39;, &#39;course&#39;, &#39;U.S.A.&#39;, &#39;also&#39;, &#39;has&#39;, &#39;its&#39;, &#39;own&#39;, &#39;record&#39;, &#39;in&#39;, &#39;the&#39;, &#39;longest&#39;, &#39;name&#39;, &#39;albeit&#39;, &#39;a&#39;, &#39;bit&#39;, &#39;shorter&#39;, &#39;...&#39;, &#39;This&#39;, &#39;record&#39;, &#39;belongs&#39;, &#39;to&#39;, &#39;the&#39;, &#39;place&#39;, &#39;called&#39;, &#39;Chargoggagoggmanchauggagoggchaubunagungamaugg&#39;, &#39;.&#39;, &quot;There&#39;s&quot;, &#39;so&#39;, &#39;many&#39;, &#39;wonderful&#39;, &#39;little&#39;, &#39;details&#39;, &#39;one&#39;, &#39;can&#39;, &#39;find&#39;, &#39;out&#39;, &#39;while&#39;, &#39;browsing&#39;, &#39;http://www.wikipedia.org&#39;, &#39;during&#39;, &#39;their&#39;, &#39;Ph.D.&#39;, &#39;or&#39;, &#39;an&#39;, &#39;M.Sc.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This seems to be fine. However, we won’t be able to segment sentences here properly because one of the cases <code class="docutils literal notranslate"><span class="pre">U.K.</span></code> in front of <code class="docutils literal notranslate"><span class="pre">Isn't</span></code> cannot be catched with the existing method. Minima working solution to cover that case would be a solutio where we would check pairs of tokens, and check whether a token that ends on <code class="docutils literal notranslate"><span class="pre">.</span></code> is followed by a token starting with a capital letter. In addition, we expand the list of splitting symbols to the symbols we find in our sentence ends. Notice that this is a gross oversimplification which would fail miserably in specific cases (question: can you think of cases where this might happen?)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bigrams</span><span class="p">(</span><span class="n">tokens</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Helper function to extract bigrams of tokens&quot;&quot;&quot;</span>
+    <span class="n">tokens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">tokens</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span>
+
+<span class="k">def</span> <span class="nf">new_sentence_segment</span><span class="p">(</span><span class="n">match_regex</span><span class="p">,</span> <span class="n">tokens</span><span class="p">):</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">sentences</span> <span class="o">=</span> <span class="p">[</span><span class="n">current</span><span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">tok</span><span class="p">,</span> <span class="n">tok2</span> <span class="ow">in</span> <span class="n">bigrams</span><span class="p">(</span><span class="n">tokens</span><span class="p">):</span>
+        <span class="n">current</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tok</span><span class="p">)</span>
+        <span class="c1"># we additionally check for . at the end of the first and</span>
+        <span class="c1"># upper case letter in the beginning of the following token</span>
+        <span class="k">if</span> <span class="n">match_regex</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">tok</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">tok</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;.&#39;</span> <span class="ow">and</span> <span class="n">tok2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isupper</span><span class="p">()):</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">sentences</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">sentences</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="n">sentences</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sentences</span>
+
+<span class="n">sentences</span> <span class="o">=</span> <span class="n">new_sentence_segment</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;\?|\.\.\.|\.&#39;</span><span class="p">),</span> <span class="n">tokens</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch&#39;, &#39;is&#39;, &#39;the&#39;, &#39;longest&#39;, &#39;official&#39;, &#39;one&#39;, &#39;word&#39;, &#39;placename&#39;, &#39;in&#39;, &#39;U.K.&#39;]
+[&quot;Isn&#39;t&quot;, &#39;that&#39;, &#39;weird&#39;, &#39;?&#39;]
+[&#39;I&#39;, &#39;mean&#39;, &#39;someone&#39;, &#39;took&#39;, &#39;the&#39;, &#39;effort&#39;, &#39;to&#39;, &#39;really&#39;, &#39;make&#39;, &#39;this&#39;, &#39;name&#39;, &#39;as&#39;, &#39;complicated&#39;, &#39;as&#39;, &#39;possible&#39;, &#39;huh&#39;, &#39;?!&#39;]
+[&#39;Of&#39;, &#39;course&#39;, &#39;U.S.A.&#39;, &#39;also&#39;, &#39;has&#39;, &#39;its&#39;, &#39;own&#39;, &#39;record&#39;, &#39;in&#39;, &#39;the&#39;, &#39;longest&#39;, &#39;name&#39;, &#39;albeit&#39;, &#39;a&#39;, &#39;bit&#39;, &#39;shorter&#39;, &#39;...&#39;]
+[&#39;This&#39;, &#39;record&#39;, &#39;belongs&#39;, &#39;to&#39;, &#39;the&#39;, &#39;place&#39;, &#39;called&#39;, &#39;Chargoggagoggmanchauggagoggchaubunagungamaugg&#39;, &#39;.&#39;]
+[&quot;There&#39;s&quot;, &#39;so&#39;, &#39;many&#39;, &#39;wonderful&#39;, &#39;little&#39;, &#39;details&#39;, &#39;one&#39;, &#39;can&#39;, &#39;find&#39;, &#39;out&#39;, &#39;while&#39;, &#39;browsing&#39;, &#39;http://www.wikipedia.org&#39;, &#39;during&#39;, &#39;their&#39;, &#39;Ph.D.&#39;, &#39;or&#39;, &#39;an&#39;, &#39;M.Sc.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./exercises"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Nadav Borenstein (and his minions)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

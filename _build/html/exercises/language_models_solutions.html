@@ -1,0 +1,852 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Language Model Exercises &#8212; Stat-NLP Book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_copenlu.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Stat-NLP Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to NDAK18000U course!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Weeks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../markdown.html">
+   Markdown Files
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week1/lab_1.html">
+     Lab 1
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  External Material
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../markdown-notebooks.html">
+   Notebooks with MyST Markdown
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/exercises/language_models_solutions.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexercises/language_models_solutions.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/exercises/language_models_solutions.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-green-setup-1-font-load-libraries">
+   <font color="green">
+    Setup 1
+   </font>
+   : Load Libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-green-setup-2-font-load-data">
+   <font color="green">
+    Setup 2
+   </font>
+   : Load Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-blue-task-1-font-optimal-pseudo-count">
+   <font color="blue">
+    Task 1
+   </font>
+   : Optimal Pseudo Count
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-blue-task-2-font-sanity-check-lm">
+   <font color="blue">
+    Task 2
+   </font>
+   : Sanity Check LM
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-blue-task-3-font-subtract-count-lm">
+   <font color="blue">
+    Task 3
+   </font>
+   : Subtract Count LM
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-blue-task-4-font-normalisation-of-stupid-lm">
+   <font color="blue">
+    Task 4
+   </font>
+   : Normalisation of Stupid LM
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Language Model Exercises</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-green-setup-1-font-load-libraries">
+   <font color="green">
+    Setup 1
+   </font>
+   : Load Libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-green-setup-2-font-load-data">
+   <font color="green">
+    Setup 2
+   </font>
+   : Load Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-blue-task-1-font-optimal-pseudo-count">
+   <font color="blue">
+    Task 1
+   </font>
+   : Optimal Pseudo Count
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-blue-task-2-font-sanity-check-lm">
+   <font color="blue">
+    Task 2
+   </font>
+   : Sanity Check LM
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-blue-task-3-font-subtract-count-lm">
+   <font color="blue">
+    Task 3
+   </font>
+   : Subtract Count LM
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-blue-task-4-font-normalisation-of-stupid-lm">
+   <font color="blue">
+    Task 4
+   </font>
+   : Normalisation of Stupid LM
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="language-model-exercises">
+<h1>Language Model Exercises<a class="headerlink" href="#language-model-exercises" title="Permalink to this headline">#</a></h1>
+<p>In these exercises you will extend and develop language models. We will use the code from the notes, but within a python package <a class="reference external" href="http://localhost:8888/edit/statnlpbook/lm.py"><code class="docutils literal notranslate"><span class="pre">lm</span></code></a>.</p>
+<section id="font-color-green-setup-1-font-load-libraries">
+<h2><font color='green'>Setup 1</font>: Load Libraries<a class="headerlink" href="#font-color-green-setup-1-font-load-libraries" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+<span class="n">_snlp_book_dir</span> <span class="o">=</span> <span class="s2">&quot;..&quot;</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_snlp_book_dir</span><span class="p">)</span> 
+<span class="kn">from</span> <span class="nn">statnlpbook.lm</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">statnlpbook.ohhla</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="c1"># %cd .. </span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;load_ext&#39;</span><span class="p">,</span> <span class="s1">&#39;autoreload&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;autoreload&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">_snlp_book_dir</span> <span class="o">=</span> <span class="s2">&quot;..&quot;</span>
+
+<span class="nn">File ~/miniconda3/envs/nlp-course/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2305,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2303</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2304</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2305</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2306</span> <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File ~/miniconda3/envs/nlp-course/lib/python3.10/site-packages/IPython/core/magics/pylab.py:99,</span> in <span class="ni">PylabMagics.matplotlib</span><span class="nt">(self, line)</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available matplotlib backends: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">backends_list</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">99</span>     <span class="n">gui</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">enable_matplotlib</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_show_matplotlib_backend</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/nlp-course/lib/python3.10/site-packages/IPython/core/interactiveshell.py:3478,</span> in <span class="ni">InteractiveShell.enable_matplotlib</span><span class="nt">(self, gui)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3457</span> <span class="k">def</span> <span class="nf">enable_matplotlib</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gui</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3458</span>     <span class="sd">&quot;&quot;&quot;Enable interactive matplotlib and inline figure support.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3459</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">3460</span><span class="sd">     This takes the following steps:</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3476</span><span class="sd">         display figures inline.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3477</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">3478</span>     <span class="kn">from</span> <span class="nn">matplotlib_inline.backend_inline</span> <span class="kn">import</span> <span class="n">configure_inline_support</span>
+<span class="g g-Whitespace">   </span><span class="mi">3480</span>     <span class="kn">from</span> <span class="nn">IPython.core</span> <span class="kn">import</span> <span class="n">pylabtools</span> <span class="k">as</span> <span class="n">pt</span>
+<span class="g g-Whitespace">   </span><span class="mi">3481</span>     <span class="n">gui</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">find_gui_and_backend</span><span class="p">(</span><span class="n">gui</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pylab_gui_select</span><span class="p">)</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">nlp</span><span class="o">-</span><span class="n">course</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib_inline</span><span class="o">/</span><span class="n">backend_inline</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="sd">&quot;&quot;&quot;A matplotlib backend for publishing figures via display_data&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Copyright (c) IPython Development Team.</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Distributed under the terms of the BSD 3-Clause License.</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">matplotlib.backends.backend_agg</span> <span class="kn">import</span> <span class="p">(</span>  <span class="c1"># noqa</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">new_figure_manager</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">FigureCanvasAgg</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">new_figure_manager_given_figure</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">colors</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<!---
+Latex Macros
+-->
+<div class="math notranslate nohighlight">
+\[
+\newcommand{\prob}{p}
+\newcommand{\vocab}{V}
+\newcommand{\params}{\boldsymbol{\theta}}
+\newcommand{\param}{\theta}
+\DeclareMathOperator{\perplexity}{PP}
+\DeclareMathOperator{\argmax}{argmax}
+\newcommand{\train}{\mathcal{D}}
+\newcommand{\counts}[2]{\#_{#1}(#2) }
+\]</div>
+</section>
+<section id="font-color-green-setup-2-font-load-data">
+<h2><font color='green'>Setup 2</font>: Load Data<a class="headerlink" href="#font-color-green-setup-2-font-load-data" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">docs</span> <span class="o">=</span> <span class="n">load_all_songs</span><span class="p">(</span><span class="s2">&quot;../data/ohhla/train/www.ohhla.com/anonymous/j_live/&quot;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;Your ohhla corpus is corrupted, please download it again!&quot;</span>
+<span class="n">trainDocs</span><span class="p">,</span> <span class="n">testDocs</span> <span class="o">=</span> <span class="n">docs</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span> <span class="n">docs</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">:]</span> 
+<span class="n">train</span> <span class="o">=</span> <span class="n">words</span><span class="p">(</span><span class="n">trainDocs</span><span class="p">)</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">words</span><span class="p">(</span><span class="n">testDocs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="font-color-blue-task-1-font-optimal-pseudo-count">
+<h2><font color='blue'>Task 1</font>: Optimal Pseudo Count<a class="headerlink" href="#font-color-blue-task-1-font-optimal-pseudo-count" title="Permalink to this headline">#</a></h2>
+<p>Plot the perplexity for laplace smoothing on the given data as a function of alpha in the interval [0.001, 0.1] in steps by 0.001. Is it fair to assume that this is a convex function? Write a method that finds the optimal pseudo count <code class="docutils literal notranslate"><span class="pre">alpha</span></code> number for <a class="reference external" href="https://github.com/uclmr/stat-nlp-book/blob/python/statnlpbook/lm.py#L180">laplace smoothing</a> for the given data up to some predefined numerical precision <code class="docutils literal notranslate"><span class="pre">epsilon</span></code> under the assumption that the perplexity is a convex function of alpha. How often did you have to call <code class="docutils literal notranslate"><span class="pre">perplexity</span></code> to find the optimum?</p>
+<p>Tips:
+<font color='white'>
+You don’t need 1st or 2nd order derivatives in this case, only the gradient descent direction. Think about recursively slicing up the problem.
+</font></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oov_train</span> <span class="o">=</span> <span class="n">inject_OOVs</span><span class="p">(</span><span class="n">train</span><span class="p">)</span>
+<span class="n">oov_vocab</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">oov_train</span><span class="p">)</span>
+<span class="n">oov_test</span> <span class="o">=</span> <span class="n">replace_OOVs</span><span class="p">(</span><span class="n">oov_vocab</span><span class="p">,</span> <span class="n">test</span><span class="p">)</span>
+<span class="n">bigram</span> <span class="o">=</span> <span class="n">NGramLM</span><span class="p">(</span><span class="n">oov_train</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">interval</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">/</span><span class="mf">1000.0</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+<span class="n">perplexit_at_1</span> <span class="o">=</span> <span class="n">perplexity</span><span class="p">(</span><span class="n">LaplaceLM</span><span class="p">(</span><span class="n">bigram</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">),</span> <span class="n">oov_test</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">plot_perplexities</span><span class="p">(</span><span class="n">interval</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Plots the perplexity of LaplaceLM for every alpha in interval.&quot;&quot;&quot;</span>
+    <span class="n">perplexities</span> <span class="o">=</span> <span class="p">[</span><span class="n">perplexity</span><span class="p">(</span><span class="n">LaplaceLM</span><span class="p">(</span><span class="n">bigram</span><span class="p">,</span> <span class="n">alpha</span><span class="p">),</span> <span class="n">oov_test</span><span class="p">)</span> <span class="k">for</span> <span class="n">alpha</span> <span class="ow">in</span> <span class="n">interval</span><span class="p">]</span>  <span class="c1"># todo</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">interval</span><span class="p">,</span> <span class="n">perplexities</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">find_optimal</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns the optimal pseudo count alpha within the interval [low, high] and the perplexity.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">high</span><span class="p">,</span> <span class="n">low</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">high</span> <span class="o">-</span> <span class="n">low</span> <span class="o">&lt;</span> <span class="n">epsilon</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">high</span><span class="p">,</span> <span class="n">perplexity</span><span class="p">(</span><span class="n">LaplaceLM</span><span class="p">(</span><span class="n">bigram</span><span class="p">,</span> <span class="n">high</span><span class="p">),</span> <span class="n">oov_test</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">high</span><span class="o">+</span><span class="n">low</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+        <span class="n">left</span> <span class="o">=</span> <span class="n">perplexity</span><span class="p">(</span><span class="n">LaplaceLM</span><span class="p">(</span><span class="n">bigram</span><span class="p">,</span> <span class="n">mid</span><span class="o">-</span><span class="n">epsilon</span><span class="p">),</span> <span class="n">oov_test</span><span class="p">)</span>
+        <span class="n">right</span> <span class="o">=</span> <span class="n">perplexity</span><span class="p">(</span><span class="n">LaplaceLM</span><span class="p">(</span><span class="n">bigram</span><span class="p">,</span> <span class="n">mid</span><span class="o">+</span><span class="n">epsilon</span><span class="p">),</span> <span class="n">oov_test</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">find_optimal</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">find_optimal</span><span class="p">(</span><span class="n">mid</span><span class="p">,</span> <span class="n">high</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">)</span>
+
+<span class="n">plot_perplexities</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>        
+<span class="n">find_optimal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0 0.0
+0.5 0.0
+0.25 0.0
+0.125 0.0
+0.0625 0.0
+0.03125 0.0
+0.03125 0.015625
+0.0234375 0.015625
+0.0234375 0.01953125
+0.0234375 0.021484375
+0.0234375 0.0224609375
+0.02294921875 0.0224609375
+0.022705078125 0.0224609375
+0.0225830078125 0.0224609375
+0.02252197265625 0.0224609375
+0.022491455078125 0.0224609375
+0.022491455078125 0.0224761962890625
+0.02248382568359375 0.0224761962890625
+0.02248382568359375 0.022480010986328125
+0.02248382568359375 0.022481918334960938
+0.022482872009277344 0.022481918334960938
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.022482872009277344, 65.3568849083981)
+</pre></div>
+</div>
+<img alt="../_images/language_models_solutions_7_2.png" src="../_images/language_models_solutions_7_2.png" />
+</div>
+</div>
+</section>
+<section id="font-color-blue-task-2-font-sanity-check-lm">
+<h2><font color='blue'>Task 2</font>: Sanity Check LM<a class="headerlink" href="#font-color-blue-task-2-font-sanity-check-lm" title="Permalink to this headline">#</a></h2>
+<p>Implement a method that tests whether a language model provides a valid probability distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sanity_check</span><span class="p">(</span><span class="n">lm</span><span class="p">,</span> <span class="o">*</span><span class="n">history</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Throws an AssertionError if lm does not define a valid probability distribution for all words </span>
+<span class="sd">    in the vocabulary.&quot;&quot;&quot;</span>  
+    <span class="n">probability_mass</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">lm</span><span class="o">.</span><span class="n">probability</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="o">*</span><span class="n">history</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">lm</span><span class="o">.</span><span class="n">vocab</span><span class="p">])</span>
+    <span class="k">assert</span> <span class="nb">abs</span><span class="p">(</span><span class="n">probability_mass</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-6</span><span class="p">,</span> <span class="n">probability_mass</span>
+
+<span class="n">unigram</span> <span class="o">=</span> <span class="n">NGramLM</span><span class="p">(</span><span class="n">oov_train</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">stupid</span> <span class="o">=</span> <span class="n">StupidBackoff</span><span class="p">(</span><span class="n">bigram</span><span class="p">,</span> <span class="n">unigram</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">([</span><span class="n">stupid</span><span class="o">.</span><span class="n">probability</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">stupid</span><span class="o">.</span><span class="n">vocab</span><span class="p">]))</span>
+<span class="k">assert</span> <span class="n">OOV</span> <span class="ow">in</span> <span class="n">stupid</span><span class="o">.</span><span class="n">vocab</span>
+<span class="n">sanity_check</span><span class="p">(</span><span class="n">stupid</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0647115579930901
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-8-9bd0c3fbec6b&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">([</span><span class="n">stupid</span><span class="o">.</span><span class="n">probability</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">stupid</span><span class="o">.</span><span class="n">vocab</span><span class="p">]))</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">assert</span> <span class="n">OOV</span> <span class="ow">in</span> <span class="n">stupid</span><span class="o">.</span><span class="n">vocab</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">sanity_check</span><span class="p">(</span><span class="n">stupid</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-8-9bd0c3fbec6b&gt;</span> in <span class="ni">sanity_check</span><span class="nt">(lm, *history)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="ow">in</span> <span class="n">the</span> <span class="n">vocabulary</span><span class="o">.</span><span class="s2">&quot;&quot;&quot;  </span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="s2">     probability_mass = sum([lm.probability(word, *history) for word in lm.vocab])</span>
+<span class="ne">----&gt; </span><span class="mi">5</span><span class="s2">     assert abs(probability_mass - 1.0) &lt; 1e-6, probability_mass</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="s2"> </span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> unigram = NGramLM(oov_train,1)</span>
+
+<span class="ne">AssertionError</span>: 1.0647115579930901
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="font-color-blue-task-3-font-subtract-count-lm">
+<h2><font color='blue'>Task 3</font>: Subtract Count LM<a class="headerlink" href="#font-color-blue-task-3-font-subtract-count-lm" title="Permalink to this headline">#</a></h2>
+<p>Develop and implement a language model that subtracts a count <span class="math notranslate nohighlight">\(d\in[0,1]\)</span> from each non-zero count in the training set. Let’s first formalise this:</p>
+<p>\begin{align}
+#<em>{w=0}(h_n) &amp;= \sum</em>{w \in V} \mathbf{1}[\counts{\train}{h_n,w} = 0]\
+#<em>{w&gt;0}(h_n) &amp;= \sum</em>{w \in V} \mathbf{1}[\counts{\train}{h_n,w} &gt; 0]\
+\prob(w|h_n) &amp;=
+\begin{cases}
+\frac{\counts{\train}{h_n,w} - d}{\counts{\train}{h_n}}  &amp; \mbox{if }\counts{\train}{h_n,w} &gt; 0 \
+\frac{d*#<em>{w&gt;0}(h_n)/#</em>{w=0}(h_n)}{\counts{\train}{h_n}} &amp; \mbox{otherwise}
+\end{cases}
+\end{align}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SubtractCount</span><span class="p">(</span><span class="n">CountLM</span><span class="p">):</span>        
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_lm</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">base_lm</span><span class="o">.</span><span class="n">vocab</span><span class="p">,</span> <span class="n">base_lm</span><span class="o">.</span><span class="n">order</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base_lm</span> <span class="o">=</span> <span class="n">base_lm</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">=</span> <span class="n">d</span>            
+        <span class="bp">self</span><span class="o">.</span><span class="n">_counts</span> <span class="o">=</span> <span class="n">base_lm</span><span class="o">.</span><span class="n">_counts</span>  <span class="c1"># not good style since it is a protected member</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vocab</span> <span class="o">=</span> <span class="n">base_lm</span><span class="o">.</span><span class="n">vocab</span>
+
+    <span class="k">def</span> <span class="nf">counts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word_and_history</span><span class="p">):</span>
+        <span class="c1"># todo: this can be chached and does not have to be called at every call of counts        </span>
+        <span class="n">history</span> <span class="o">=</span> <span class="n">word_and_history</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>        
+        <span class="n">num_non_zero_histories</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vocab</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_counts</span><span class="p">[(</span><span class="n">x</span><span class="p">,</span> <span class="p">)</span> <span class="o">+</span> <span class="n">history</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="n">num_zero_histories</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span> <span class="o">-</span> <span class="n">num_non_zero_histories</span>        
+        <span class="k">if</span> <span class="n">num_zero_histories</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_counts</span><span class="p">[</span><span class="n">word_and_history</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>        
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_counts</span><span class="p">[</span><span class="n">word_and_history</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_counts</span><span class="p">[</span><span class="n">word_and_history</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span>
+            <span class="k">else</span><span class="p">:</span>            
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">*</span> <span class="n">num_non_zero_histories</span> <span class="o">/</span> <span class="n">num_zero_histories</span>
+
+    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">history</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_lm</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">history</span><span class="p">)</span>    
+    
+<span class="n">subtract_lm</span> <span class="o">=</span> <span class="n">SubtractCount</span><span class="p">(</span><span class="n">unigram</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">oov_prob</span> <span class="o">=</span> <span class="n">subtract_lm</span><span class="o">.</span><span class="n">probability</span><span class="p">(</span><span class="n">OOV</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">)</span>
+<span class="n">rest_prob</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">subtract_lm</span><span class="o">.</span><span class="n">probability</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">subtract_lm</span><span class="o">.</span><span class="n">vocab</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">oov_prob</span> <span class="o">+</span> <span class="n">rest_prob</span><span class="p">)</span>
+<span class="n">sanity_check</span><span class="p">(</span><span class="n">subtract_lm</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">)</span>
+<span class="n">perplexity</span><span class="p">(</span><span class="n">subtract_lm</span><span class="p">,</span> <span class="n">oov_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.1742331911436041
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>91.4414922652717
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="font-color-blue-task-4-font-normalisation-of-stupid-lm">
+<h2><font color='blue'>Task 4</font>: Normalisation of Stupid LM<a class="headerlink" href="#font-color-blue-task-4-font-normalisation-of-stupid-lm" title="Permalink to this headline">#</a></h2>
+<p>Develop and implement a version of the <a class="reference external" href="https://github.com/uclmr/stat-nlp-book/blob/python/statnlpbook/lm.py#L205">stupid language model</a> that provides probabilities summing up to 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">StupidBackoffNormalized</span><span class="p">(</span><span class="n">LanguageModel</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">main</span><span class="p">,</span> <span class="n">backoff</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">main</span><span class="o">.</span><span class="n">vocab</span><span class="p">,</span> <span class="n">main</span><span class="o">.</span><span class="n">order</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">main</span> <span class="o">=</span> <span class="n">main</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">backoff</span> <span class="o">=</span> <span class="n">backoff</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span>               
+
+    <span class="k">def</span> <span class="nf">probability</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">,</span> <span class="o">*</span><span class="n">history</span><span class="p">):</span>
+        <span class="n">main_counts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">counts</span><span class="p">((</span><span class="n">word</span><span class="p">,)</span><span class="o">+</span><span class="nb">tuple</span><span class="p">(</span><span class="n">history</span><span class="p">))</span>
+        <span class="n">main_norm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">history</span><span class="p">)</span>        
+        <span class="n">backoff_order_diff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">order</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">backoff</span><span class="o">.</span><span class="n">order</span>
+        <span class="n">backoff_counts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">backoff</span><span class="o">.</span><span class="n">counts</span><span class="p">((</span><span class="n">word</span><span class="p">,)</span><span class="o">+</span><span class="nb">tuple</span><span class="p">(</span><span class="n">history</span><span class="p">[:</span><span class="o">-</span><span class="n">backoff_order_diff</span><span class="p">]))</span>
+        <span class="n">backoff_norm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">backoff</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">history</span><span class="p">[:</span><span class="o">-</span><span class="n">backoff_order_diff</span><span class="p">])</span>        
+        <span class="n">counts</span> <span class="o">=</span> <span class="n">main_counts</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">backoff_counts</span>
+        <span class="n">norm</span> <span class="o">=</span> <span class="n">main_norm</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">backoff_norm</span>
+        <span class="k">return</span> <span class="n">counts</span> <span class="o">/</span> <span class="n">norm</span>
+        
+<span class="n">less_stupid</span> <span class="o">=</span> <span class="n">StupidBackoffNormalized</span><span class="p">(</span><span class="n">bigram</span><span class="p">,</span> <span class="n">unigram</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">([</span><span class="n">less_stupid</span><span class="o">.</span><span class="n">probability</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">less_stupid</span><span class="o">.</span><span class="n">vocab</span><span class="p">]))</span>
+<span class="n">sanity_check</span><span class="p">(</span><span class="n">less_stupid</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">)</span>
+<span class="n">perplexity</span><span class="p">(</span><span class="n">less_stupid</span><span class="p">,</span> <span class="n">oov_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.000000000000002
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60.032236179798886
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./exercises"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Nadav Borenstein (and his minions)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
