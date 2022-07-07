@@ -3,18 +3,12 @@
 
 # # Lab 1
 # 
-# <table>
-#       <tr>
-#     <td style="text-align:center">Pepa Atanasova</td>
-#      <td style="text-align:center">Dustin Wright</td>
-#      <td style="text-align:center">Karolina Stanczak</td>
-#   </tr>
-#     <tr>
-#   <td><img alt="../img/pepa_featured.png" src="../img/pepa_featured.png" width="250px" /></td>
-#   <td><img alt="../img/dustin_featured.png" src="../img/dustin_featured.jpg" width="210px" /></td>
-#   <td><img alt="../img/karolina_featured.png" src="../img/karolina_featured.png" width="250px" /></td>
-#     </tr>
-# </table>
+# ```{image} ../img/karolina_featured.png
+# :alt: Karolina
+# :class: bg-primary mb-1
+# :width: 200px
+# :align: center
+# ```
 
 # ## Lab Schedule
 #     

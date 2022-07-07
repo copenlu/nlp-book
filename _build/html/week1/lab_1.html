@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Stat-NLP Book</title>
+    <title>Lab 1 &#8212; Stat-NLP Book</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Notebooks with MyST Markdown" href="../markdown-notebooks.html" />
@@ -118,17 +120,22 @@ const thebe_selector_output = ".output, .cell_output"
   Weeks
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../markdown.html">
    Markdown Files
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Lab 1
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -194,6 +201,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/week1/lab_1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -319,7 +355,190 @@ title="Print to PDF"
         <i class="fas fa-list"></i> Contents
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="simple visible nav section-nav flex-column">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lab-schedule">
+   Lab Schedule
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lab-agenda">
+   Lab Agenda
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#corona-guidelines-subject-to-changes">
+     Corona Guidelines (subject to changes)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-jupyter">
+   Introduction to Jupyter
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kernels">
+     Kernels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#checkpoints">
+     Checkpoints
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#warning">
+     WARNING
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-colab-https-colab-research-google-com">
+   Introduction to Colab https://colab.research.google.com/
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collaboration-options">
+     Collaboration options:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-a-custom-dataset">
+     Using a custom dataset
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#uploading-files-from-your-local-file-system">
+       Uploading files from your local file system
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#files-download-will-invoke-a-browser-download-of-the-file-to-your-local-computer">
+     files.download will invoke a browser download of the file to your local computer.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mounting-google-drive-locally">
+     Mounting Google Drive locally
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-tutorials">
+   Python tutorials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stat-nlp-book-setup">
+   stat-nlp-book setup
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#on-your-personal-computer">
+     On your personal computer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#on-microsoft-azure">
+     On Microsoft Azure
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-info">
+   Additional Info
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#docker-commands">
+     Docker commands
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#managing-your-changes">
+     Managing your changes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tokenisation">
+   Tokenisation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spacy">
+     Spacy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nltk">
+     NLTK
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#word-level-tokenization">
+       Word-level tokenization
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#language-dependent-tokenization">
+       Language dependent tokenization
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#references">
+       References:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-pytorch-https-pytorch-org">
+   Introduction to PyTorch https://pytorch.org/
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataset-and-bag-of-words">
+     Dataset and Bag-of-Words
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#custom-classifier">
+     Custom Classifier
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training">
+     Training
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluation">
+     Evaluation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-links">
+     Useful links
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-project">
+   Course Project
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -329,7 +548,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1>Lab 1</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -338,7 +557,190 @@ title="Print to PDF"
                             <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lab-schedule">
+   Lab Schedule
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lab-agenda">
+   Lab Agenda
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#corona-guidelines-subject-to-changes">
+     Corona Guidelines (subject to changes)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-jupyter">
+   Introduction to Jupyter
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kernels">
+     Kernels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#checkpoints">
+     Checkpoints
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#warning">
+     WARNING
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-colab-https-colab-research-google-com">
+   Introduction to Colab https://colab.research.google.com/
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collaboration-options">
+     Collaboration options:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-a-custom-dataset">
+     Using a custom dataset
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#uploading-files-from-your-local-file-system">
+       Uploading files from your local file system
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#files-download-will-invoke-a-browser-download-of-the-file-to-your-local-computer">
+     files.download will invoke a browser download of the file to your local computer.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mounting-google-drive-locally">
+     Mounting Google Drive locally
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-tutorials">
+   Python tutorials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stat-nlp-book-setup">
+   stat-nlp-book setup
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#on-your-personal-computer">
+     On your personal computer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#on-microsoft-azure">
+     On Microsoft Azure
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-info">
+   Additional Info
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#docker-commands">
+     Docker commands
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#managing-your-changes">
+     Managing your changes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tokenisation">
+   Tokenisation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spacy">
+     Spacy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nltk">
+     NLTK
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#word-level-tokenization">
+       Word-level tokenization
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#language-dependent-tokenization">
+       Language dependent tokenization
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#references">
+       References:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-pytorch-https-pytorch-org">
+   Introduction to PyTorch https://pytorch.org/
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataset-and-bag-of-words">
+     Dataset and Bag-of-Words
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#custom-classifier">
+     Custom Classifier
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training">
+     Training
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluation">
+     Evaluation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-links">
+     Useful links
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-project">
+   Course Project
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -349,7 +751,892 @@ title="Print to PDF"
                 
               <div>
                 
-  
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-1">
+<h1>Lab 1<a class="headerlink" href="#lab-1" title="Permalink to this headline">#</a></h1>
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/karolina_featured.png"><img alt="Karolina" class="bg-primary mb-1 align-center" src="../_images/karolina_featured.png" style="width: 200px;" /></a>
+<section id="lab-schedule">
+<h2>Lab Schedule<a class="headerlink" href="#lab-schedule" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Lab Sessions:</p>
+<ul>
+<li><p>Group 1: Mondays, 10-12 in øv - 1-0-26, Universitetsparken 1, DIKU, Weeks 37-41 + 43-44</p></li>
+<li><p>Group 2: Fridays, 10-12 in øv - 1-0-26, Universitetsparken 1, DIKU, Weeks 36-41 + 43-44</p></li>
+</ul>
+</li>
+</ul>
+<p>We have assigned you to one of two lab session groups based on your answers to the <a class="reference external" href="https://absalon.instructure.com/courses/52205/quizzes/62668">Getting to Know You survey</a>. Please note that this is a preliminary assignment.</p>
+</section>
+<section id="lab-agenda">
+<h2>Lab Agenda<a class="headerlink" href="#lab-agenda" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Introduction to useful tools for the course (Jupyter, Google Colab)</p></li>
+<li><p>Setting up the course environment</p></li>
+<li><p>Tokenization</p></li>
+<li><p>Introduction to PyTorch</p></li>
+<li><p>Questions about the course project / group work on the  project</p></li>
+</ul>
+<section id="corona-guidelines-subject-to-changes">
+<h3>Corona Guidelines (subject to changes)<a class="headerlink" href="#corona-guidelines-subject-to-changes" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><strong>Do not attend</strong> the in-person lectures and lab sessions if you have COVID-19 symptoms</p></li>
+<li><p><strong>Report</strong> symptoms to the course teachers as well as university immediately</p></li>
+<li><p>Wash and/or <strong>disinfect</strong> your hands before entering the auditorium</p></li>
+<li><p>Keep one metre’s <strong>distance</strong> from other students</p></li>
+<li><p>Keep two metre’s distance from members of the teaching team when they are presenting</p></li>
+<li><p>Leave the classroom in an <strong>orderly fashion</strong></p></li>
+<li><p>Full COVID-19 guidelines by SCIENCE: <a class="reference external" href="https://kunet.ku.dk/faculty-and-department/science/COVID-19/Pages/default.aspx">https://kunet.ku.dk/faculty-and-department/science/COVID-19/Pages/default.aspx</a></p></li>
+<li><p>Poster with summary of guidelines from SCIENCE: <a class="reference external" href="https://kunet.ku.dk/faculty-and-department/science/COVID-19/Documents/app%201%20poster%20generel%20guidelines%20200821.pptx">https://kunet.ku.dk/faculty-and-department/science/COVID-19/Documents/app 1 poster generel guidelines 200821.pptx</a></p></li>
+</ul>
+</section>
+</section>
+<section id="introduction-to-jupyter">
+<h2>Introduction to Jupyter<a class="headerlink" href="#introduction-to-jupyter" title="Permalink to this headline">#</a></h2>
+<p>Jupyter is an open-source web app that combines visualizations, narrative text, mathematical equations, and other rich media in a single document.</p>
+<ul class="simple">
+<li><p>Creating new notebook - from the menu File -&gt; New Notebook. Once created, you can rename the notebook by clicking on its name and edit its content by adding (plus button), deleting or editing cells.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">);</span> <span class="c1"># this is a code block</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, World!
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is a <em>Markdown block</em> where you can write text.</p>
+<p>You can get help about a method with <strong>(<kbd>Shift</kbd> + <kbd>Tab</kbd>)</strong></p>
+<p><strong>(<kbd>Shift</kbd> + <kbd>Enter</kbd>)</strong> executes the text/code blocks</p>
+<p>While the a code cell is being executed, you’ll see a star on the right side of the cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python --version # you can also write shell commands <span class="k">in</span> code blocks
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python 3.10.4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 install nltk # you can also install new libraries
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: nltk in /Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages (3.7)
+Requirement already satisfied: joblib in /Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages (from nltk) (1.1.0)
+Requirement already satisfied: regex&gt;=2021.8.3 in /Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages (from nltk) (2022.6.2)
+Requirement already satisfied: click in /Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages (from nltk) (8.1.3)
+Requirement already satisfied: tqdm in /Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages (from nltk) (4.64.0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also create visualizations and save them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s1">&#39;--&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [4],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;my_figure.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="o">%</span><span class="k">time</span> time.sleep(10) # this is some jupyter magic
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 3.27 ms, sys: 240 µs, total: 3.51 ms
+Wall time: 10 s
+</pre></div>
+</div>
+</div>
+</div>
+<p>All Jupyter magic commands are described <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Magic used in the notebooks : </span>
+
+<span class="c1"># automatically re-load imported modules every time before executing the Python code typed</span>
+<span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+
+<span class="c1"># automatically include matplotlib plots in the frontend of the notebook and save them with the notebook</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<section id="kernels">
+<h3>Kernels<a class="headerlink" href="#kernels" title="Permalink to this headline">#</a></h3>
+<p>Behind every notebook runs a <strong>kernel</strong>. When you run a code cell, that code is executed within the kernel. The kernel is build with a specific Python version. Any output is returned back to the cell to be displayed. The kernel’s state persists over time and between cells — it pertains to the document as a whole and not individual cells.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Time flies like an arrow.&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package punkt to /home/jovyan/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nltk</span><span class="o">.</span><span class="n">tokenize</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Time&#39;, &#39;flies&#39;, &#39;like&#39;, &#39;an&#39;, &#39;arrow&#39;, &#39;.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="checkpoints">
+<h3>Checkpoints<a class="headerlink" href="#checkpoints" title="Permalink to this headline">#</a></h3>
+<p>When you create a notebook, a checkpoint file is also saved in a hidden directory called .ipynb_checkpoints. Every time you manually save the notebook (<strong>(<kbd>command</kbd> + <kbd>S</kbd>)</strong>), the checkpoint file updates. Jupyter autosaves your work on occasion, which only updates the .ipynb file but not the checkpoint. You can revert back to the latest checkpoint using File -&gt; Revert to Checkpoint.</p>
+</section>
+<section id="warning">
+<h3>WARNING<a class="headerlink" href="#warning" title="Permalink to this headline">#</a></h3>
+<p>Code in Jupyter notebooks can be executed in a non-sequential order. Cells can get deleted.
+Notebooks are dangerous unless you run each cell exactly once and sequentially!</p>
+<p>To restart the state of the notebook you can select:
+<strong>“Kernel -&gt; Restart &amp; Run All”</strong></p>
+<p>This is especially good to do before sharing your notebook with someone else.</p>
+<p>References:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.dataquest.io/blog/jupyter-notebook-tutorial/">https://www.dataquest.io/blog/jupyter-notebook-tutorial/</a></p></li>
+<li><p><a class="reference external" href="https://nbviewer.jupyter.org/github/cgpotts/cs224u/blob/master/tutorial_jupyter_notebooks.ipynb">https://nbviewer.jupyter.org/github/cgpotts/cs224u/blob/master/tutorial_jupyter_notebooks.ipynb</a></p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="introduction-to-colab-https-colab-research-google-com">
+<h2>Introduction to Colab <a class="reference external" href="https://colab.research.google.com/">https://colab.research.google.com/</a><a class="headerlink" href="#introduction-to-colab-https-colab-research-google-com" title="Permalink to this headline">#</a></h2>
+<p>Colab allows to run notebooks on the Google Cloud with free access to GPUs and TPUs. You can run the same commands reviewed above in Colab as well.</p>
+<p>The notebooks can be shared with other people and you can leave comments and control permissions on it.</p>
+<p>To run the notebook on GPU/TPU you have to select from the menu Runtime-&gt;Change Runtime type, which will be None (CPU) by default.</p>
+<section id="collaboration-options">
+<h3>Collaboration options:<a class="headerlink" href="#collaboration-options" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Share button in the upper right corner.</p></li>
+<li><p>File-&gt;Make a Copy creates a copy of the notebook in Drive.</p></li>
+<li><p>File-&gt;Save saves the File to Drive and pins a version to the checkpoint and you can later restore version from File-&gt;Revision history</p></li>
+<li><p>GitHub - you can open notebooks hosted in GitHub, this will open a new editable version of the notebook and any changes won’t override the GitHub version. If you want to save the changes to GitHub select File-&gt;Make a copy to GitHub.</p></li>
+</ul>
+</section>
+<section id="using-a-custom-dataset">
+<h3>Using a custom dataset<a class="headerlink" href="#using-a-custom-dataset" title="Permalink to this headline">#</a></h3>
+<p><strong>The code cells below have to be run in a Colab environment!</strong></p>
+<section id="uploading-files-from-your-local-file-system">
+<h4>Uploading files from your local file system<a class="headerlink" href="#uploading-files-from-your-local-file-system" title="Permalink to this headline">#</a></h4>
+<p>files.upload returns a dictionary of the files which were uploaded. The dictionary is keyed by the file name and values are the data which were uploaded.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this code cell has to be run in Colab environment</span>
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
+
+<span class="n">uploaded</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">uploaded</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;User uploaded file &quot;</span><span class="si">{name}</span><span class="s1">&quot; with length </span><span class="si">{length}</span><span class="s1"> bytes&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+      <span class="n">name</span><span class="o">=</span><span class="n">fn</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">uploaded</span><span class="p">[</span><span class="n">fn</span><span class="p">])))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="files-download-will-invoke-a-browser-download-of-the-file-to-your-local-computer">
+<h3>files.download will invoke a browser download of the file to your local computer.<a class="headerlink" href="#files-download-will-invoke-a-browser-download-of-the-file-to-your-local-computer" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+  <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;some content&#39;</span><span class="p">)</span>
+
+<span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mounting-google-drive-locally">
+<h3>Mounting Google Drive locally<a class="headerlink" href="#mounting-google-drive-locally" title="Permalink to this headline">#</a></h3>
+<p>You can mount your Google Drive in the notebook and use all of the files available there.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span> <span class="c1"># this will trigger permission prompts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/content/drive/My Drive/foo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+  <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Hello Google Drive!&#39;</span><span class="p">)</span>
+<span class="o">!</span>ls /content/drive/My<span class="se">\ </span>Drive/ <span class="p">|</span> wc -l
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drive</span><span class="o">.</span><span class="n">flush_and_unmount</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;All changes made in this colab session should now be visible in Drive.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 freeze # contains a lot of pre-installed packages
+</pre></div>
+</div>
+</div>
+</div>
+<p>References:</p>
+<ul class="simple">
+<li><p>Colab guides and examples : <a class="reference external" href="https://colab.research.google.com/notebooks/intro.ipynb?hl=en">https://colab.research.google.com/notebooks/intro.ipynb?hl=en</a></p></li>
+<li><p>Integration with GitHub: <a class="reference external" href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb#scrollTo=WzIRIt9d2huC">https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb#scrollTo=WzIRIt9d2huC</a></p></li>
+<li><p>External data handling: <a class="reference external" href="https://colab.research.google.com/notebooks/io.ipynb#scrollTo=G5IVmR8S9SeF">https://colab.research.google.com/notebooks/io.ipynb#scrollTo=G5IVmR8S9SeF</a></p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="python-tutorials">
+<h2>Python tutorials<a class="headerlink" href="#python-tutorials" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Go thoutgh this <a class="reference internal" href="../exercises/python_intro.html"><span class="doc std std-doc">Notebook</span></a> with elementary Python syntax.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html">An Informal Introduction to Python</a></p></li>
+<li><p><a class="reference external" href="https://www.python.org/about/gettingstarted/">Python for Beginners</a></p></li>
+<li><p><a class="reference external" href="https://www.stavros.io/tutorials/python/">Learn Python in 10 minutes</a></p></li>
+<li><p><a class="reference external" href="https://www.google.co.uk/search?q=python+tutorial">LOADS of others</a></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="stat-nlp-book-setup">
+<h2>stat-nlp-book setup<a class="headerlink" href="#stat-nlp-book-setup" title="Permalink to this headline">#</a></h2>
+<section id="on-your-personal-computer">
+<h3>On your personal computer<a class="headerlink" href="#on-your-personal-computer" title="Permalink to this headline">#</a></h3>
+<p>Go to <a class="reference external" href="https://github.com/copenlu/stat-nlp-book">https://github.com/copenlu/stat-nlp-book</a> and follow the readme to set up the stat-nlp-book.</p>
+</section>
+<section id="on-microsoft-azure">
+<h3>On Microsoft Azure<a class="headerlink" href="#on-microsoft-azure" title="Permalink to this headline">#</a></h3>
+<p>If you feel adventurous, and want to set up your own Virtual Machine with stat-nlp-book, follow the <span class="xref myst">Azure tutorial</span></p>
+</section>
+</section>
+<section id="additional-info">
+<h2>Additional Info<a class="headerlink" href="#additional-info" title="Permalink to this headline">#</a></h2>
+<section id="docker-commands">
+<h3>Docker commands<a class="headerlink" href="#docker-commands" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Get a list of the currently running containers <br>
+<code>docker ps -q</code> <br></p></li>
+<li><p>Run shell commands in your container by first getting the id of the container with above command and then: <br>
+<code>docker exec -it <em>container-id</em> <em>command</em></code> <br>
+e.g. <code>docker exec -it 8c16b8de4771 python –version</code></p></li>
+</ul>
+</section>
+<section id="managing-your-changes">
+<h3>Managing your changes<a class="headerlink" href="#managing-your-changes" title="Permalink to this headline">#</a></h3>
+<p>There are several ways to keep your changes within the official repo organised. Some of them are:</p>
+<ul class="simple">
+<li><p>Create your own <a class="reference external" href="https://help.github.com/en/articles/fork-a-repo">fork</a>
+of the repo. The fork can be <a class="reference external" href="https://help.github.com/en/articles/syncing-a-fork?query=f">synced</a> with the official course repo when new changes are available. Meanwhile, you can also maintain your changes in your forked repo.</p></li>
+<li><p>Another option is to keep your changes only in a local branch (<code>git checkout -b <em>your-branch-name</em></code>) on your computer. Each time there is a change in the course repo, you can pull the repo and merge the changes in your branch (<code>git merge origin/master</code>)</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="tokenisation">
+<h2>Tokenisation<a class="headerlink" href="#tokenisation" title="Permalink to this headline">#</a></h2>
+<p>Tokenisation is an important pre-processing step for NLP models.</p>
+<p>You can tokenise text at different levels - split to sentences, tokens, subwords, etc.</p>
+<p>There are a lot of corner cases, language-specific and/or domain-specific cases, which have to handled in different ways.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">text_sentences</span> <span class="o">=</span> <span class="s2">&quot;The office is open between 10 a.m. and 1 p.m. every day... Please, be respective of the hours.&quot;</span>
+<span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;(\.|!|\?)&#39;</span><span class="p">,</span> <span class="n">text_sentences</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;The office is open between 10 a&#39;,
+ &#39;.&#39;,
+ &#39;m&#39;,
+ &#39;.&#39;,
+ &#39; and 1 p&#39;,
+ &#39;.&#39;,
+ &#39;m&#39;,
+ &#39;.&#39;,
+ &#39; every day&#39;,
+ &#39;.&#39;,
+ &#39;&#39;,
+ &#39;.&#39;,
+ &#39;&#39;,
+ &#39;.&#39;,
+ &#39; Please, be respective of the hours&#39;,
+ &#39;.&#39;,
+ &#39;&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Luckily, there are libraries providing tokenization functionalities that handle most of the cases. Let’s look two of the most common libraries for tokenisation:</p>
+<section id="spacy">
+<h3>Spacy<a class="headerlink" href="#spacy" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># download the language models, this can be done for other languages as well</span>
+<span class="o">!</span>python -m spacy download en_core_web_sm # You might have to restart the notebook <span class="k">if</span> the file cannot be found
+<span class="o">!</span>python -m spacy download fr_core_news_sm
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting en_core_web_sm==2.1.0
+  Downloading https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.1.0/en_core_web_sm-2.1.0.tar.gz (11.1 MB)
+     |████████████████████████████████| 11.1 MB 4.1 MB/s eta 0:00:01
+?25h<span class=" -Color -Color-C2">✔ Download and installation successful</span>
+You can now load the model via spacy.load(&#39;en_core_web_sm&#39;)
+Collecting fr_core_news_sm==2.1.0
+  Downloading https://github.com/explosion/spacy-models/releases/download/fr_core_news_sm-2.1.0/fr_core_news_sm-2.1.0.tar.gz (13.1 MB)
+     |████████████████████████████████| 13.1 MB 13.4 MB/s eta 0:00:01
+?25h<span class=" -Color -Color-C2">✔ Download and installation successful</span>
+You can now load the model via spacy.load(&#39;fr_core_news_sm&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
+
+<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text_sentences</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">sents</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[The office is open between 10 a.m. and 1 p.m. every day...,
+ Please, be respective of the hours.]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="nltk">
+<h3>NLTK<a class="headerlink" href="#nltk" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+
+<span class="n">nltk</span><span class="o">.</span><span class="n">tokenize</span><span class="o">.</span><span class="n">sent_tokenize</span><span class="p">(</span><span class="n">text_sentences</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;The office is open between 10 a.m. and 1 p.m. every day...&#39;,
+ &#39;Please, be respective of the hours.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="word-level-tokenization">
+<h4>Word-level tokenization<a class="headerlink" href="#word-level-tokenization" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Mr. O&#39;Neill thinks that the boys&#39; stories about Chile&#39;s capital aren&#39;t amusing... Good muffins cost $3.88 in New York. Please buy me two of them!!! Thanks..&quot;</span>
+<span class="n">text_tweet</span> <span class="o">=</span> <span class="s2">&quot;https://t.co/9z2J3P33Uc Hey @NLPer! This is a #NLProc tweet :-D&quot;</span>
+<span class="n">noisy_tweet</span> <span class="o">=</span> <span class="s2">&quot;UserAnonym123 What&#39;s your timezone_!@# !@#$%^&amp;*()_+ 0123456&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Common English tokenization&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nltk</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">token</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Tweet tokenization&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nltk</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text_tweet</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">token</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text_tweet</span><span class="p">)])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Tokenization of a noisy tweet&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nltk</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">noisy_tweet</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">token</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">nlp</span><span class="p">(</span><span class="n">noisy_tweet</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Common English tokenization
+[&#39;Mr.&#39;, &quot;O&#39;Neill&quot;, &#39;thinks&#39;, &#39;that&#39;, &#39;the&#39;, &#39;boys&#39;, &quot;&#39;&quot;, &#39;stories&#39;, &#39;about&#39;, &#39;Chile&#39;, &quot;&#39;s&quot;, &#39;capital&#39;, &#39;are&#39;, &quot;n&#39;t&quot;, &#39;amusing&#39;, &#39;...&#39;, &#39;Good&#39;, &#39;muffins&#39;, &#39;cost&#39;, &#39;$&#39;, &#39;3.88&#39;, &#39;in&#39;, &#39;New&#39;, &#39;York&#39;, &#39;.&#39;, &#39;Please&#39;, &#39;buy&#39;, &#39;me&#39;, &#39;two&#39;, &#39;of&#39;, &#39;them&#39;, &#39;!&#39;, &#39;!&#39;, &#39;!&#39;, &#39;Thanks..&#39;]
+[&#39;Mr.&#39;, &quot;O&#39;Neill&quot;, &#39;thinks&#39;, &#39;that&#39;, &#39;the&#39;, &#39;boys&#39;, &quot;&#39;&quot;, &#39;stories&#39;, &#39;about&#39;, &#39;Chile&#39;, &quot;&#39;s&quot;, &#39;capital&#39;, &#39;are&#39;, &quot;n&#39;t&quot;, &#39;amusing&#39;, &#39;...&#39;, &#39;Good&#39;, &#39;muffins&#39;, &#39;cost&#39;, &#39;$&#39;, &#39;3.88&#39;, &#39;in&#39;, &#39;New&#39;, &#39;York&#39;, &#39;.&#39;, &#39;Please&#39;, &#39;buy&#39;, &#39;me&#39;, &#39;two&#39;, &#39;of&#39;, &#39;them&#39;, &#39;!&#39;, &#39;!&#39;, &#39;!&#39;, &#39;Thanks&#39;, &#39;..&#39;]
+
+Tweet tokenization
+[&#39;https&#39;, &#39;:&#39;, &#39;//t.co/9z2J3P33Uc&#39;, &#39;Hey&#39;, &#39;@&#39;, &#39;NLPer&#39;, &#39;!&#39;, &#39;This&#39;, &#39;is&#39;, &#39;a&#39;, &#39;#&#39;, &#39;NLProc&#39;, &#39;tweet&#39;, &#39;:&#39;, &#39;-D&#39;]
+[&#39;https://t.co/9z2J3P33Uc&#39;, &#39;Hey&#39;, &#39;@NLPer&#39;, &#39;!&#39;, &#39;This&#39;, &#39;is&#39;, &#39;a&#39;, &#39;#&#39;, &#39;NLProc&#39;, &#39;tweet&#39;, &#39;:-D&#39;]
+
+Tokenization of a noisy tweet
+[&#39;UserAnonym123&#39;, &#39;What&#39;, &quot;&#39;s&quot;, &#39;your&#39;, &#39;timezone_&#39;, &#39;!&#39;, &#39;@&#39;, &#39;#&#39;, &#39;!&#39;, &#39;@&#39;, &#39;#&#39;, &#39;$&#39;, &#39;%&#39;, &#39;^&#39;, &#39;&amp;&#39;, &#39;*&#39;, &#39;(&#39;, &#39;)&#39;, &#39;_+&#39;, &#39;0123456&#39;]
+[&#39;UserAnonym123&#39;, &#39;What&#39;, &quot;&#39;s&quot;, &#39;your&#39;, &#39;timezone_!@&#39;, &#39;#&#39;, &#39;!&#39;, &#39;@#$%^&amp;*()_+&#39;, &#39;0123456&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Both libraries perform almost similar for tokenising English common text, so it depends which library you’ll use for other features.</p>
+<p>When it comes to tweets, the nltk default tokenizer performs bad, but NLTK also provides the TweetTokenizer that is suited for tweet tokenization.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tweet_tokenizer</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">tokenize</span><span class="o">.</span><span class="n">TweetTokenizer</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tweet_tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">text_tweet</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tweet_tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">noisy_tweet</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;https://t.co/9z2J3P33Uc&#39;, &#39;Hey&#39;, &#39;@NLPer&#39;, &#39;!&#39;, &#39;This&#39;, &#39;is&#39;, &#39;a&#39;, &#39;#NLProc&#39;, &#39;tweet&#39;, &#39;:-D&#39;]
+[&#39;UserAnonym&#39;, &#39;123&#39;, &quot;What&#39;s&quot;, &#39;your&#39;, &#39;timezone&#39;, &#39;_&#39;, &#39;!&#39;, &#39;@&#39;, &#39;#&#39;, &#39;!&#39;, &#39;@&#39;, &#39;#&#39;, &#39;$&#39;, &#39;%&#39;, &#39;^&#39;, &#39;&amp;&#39;, &#39;*&#39;, &#39;(&#39;, &#39;)&#39;, &#39;_&#39;, &#39;+&#39;, &#39;0123456&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you saw, the above tokenizers tokenize negation contractions like “are”, “n’t”, which is per the the Penn Treebank guidelines. Such tokenization can be useful when building sentiment classification or information extraction.</p>
+<p>Question:</p>
+<ul class="simple">
+<li><p>How should we split “I bought a 12-ft boat!”? In 1, 2, or 3 tokens?</p></li>
+<li><p>How should we tokenize “It is a 2850m distance flight.”, “The maximum speed on the autobahn is 130km/h.”?</p></li>
+</ul>
+<p>There is again a rule that units are split from numerical values. Let’s test the performance of the tokenizers:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Spacy tokenizer&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">token</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;I bought a 12-ft boat!&quot;</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">token</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;It is a 2850m distance flight.&quot;</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">token</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;The maximum speed on the autobahn is 130km/h.&quot;</span><span class="p">)])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">NLTK simple tokenizer&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">nltk</span><span class="o">.</span><span class="n">tokenize</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="s2">&quot;I bought a 12-ft boat!&quot;</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">nltk</span><span class="o">.</span><span class="n">tokenize</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="s2">&quot;It is a 2850m distance flight.&quot;</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">nltk</span><span class="o">.</span><span class="n">tokenize</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="s2">&quot;The maximum speed on the autobahn is 130km/h.&quot;</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Spacy tokenizer
+[&#39;I&#39;, &#39;bought&#39;, &#39;a&#39;, &#39;12-ft&#39;, &#39;boat&#39;, &#39;!&#39;]
+[&#39;It&#39;, &#39;is&#39;, &#39;a&#39;, &#39;2850&#39;, &#39;m&#39;, &#39;distance&#39;, &#39;flight&#39;, &#39;.&#39;]
+[&#39;The&#39;, &#39;maximum&#39;, &#39;speed&#39;, &#39;on&#39;, &#39;the&#39;, &#39;autobahn&#39;, &#39;is&#39;, &#39;130&#39;, &#39;km/h&#39;, &#39;.&#39;]
+
+NLTK simple tokenizer
+[[&#39;I&#39;, &#39;bought&#39;, &#39;a&#39;, &#39;12-ft&#39;, &#39;boat&#39;, &#39;!&#39;]]
+[[&#39;It&#39;, &#39;is&#39;, &#39;a&#39;, &#39;2850m&#39;, &#39;distance&#39;, &#39;flight&#39;, &#39;.&#39;]]
+[[&#39;The&#39;, &#39;maximum&#39;, &#39;speed&#39;, &#39;on&#39;, &#39;the&#39;, &#39;autobahn&#39;, &#39;is&#39;, &#39;130km/h&#39;, &#39;.&#39;]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="language-dependent-tokenization">
+<h4>Language dependent tokenization<a class="headerlink" href="#language-dependent-tokenization" title="Permalink to this headline">#</a></h4>
+<p>While some languages have similar rules for tokenization, other languages are quite different.
+In French, words originally composed of more than one lexical unit that nowadays form a single lexical unit and should thus be recognized as a single token, where an apostrophe should be used to split the word in some cases, but not in all.</p>
+<p>The following sentence “On nous dit qu’aujourd’hui c’est le cas, encore faudra-t-il l’évaluer.”, which means “We are told that this is the case today, it still needs to be assessed.” has the following correct tokenization:</p>
+<p>‘On’, ‘nous’, ‘dit’, ‘qu’’, ‘aujourd’hui’, ‘c’’, ‘est’, ‘le’, ‘cas’, ‘,’, ‘encore’, ‘faudra’, ‘-t-il’, ‘l’’, ‘évaluer’, ‘.’</p>
+<p>Explanation:</p>
+<ul class="simple">
+<li><p>words originally composed of more than one lexical unit that nowadays form a single lexical unit and should thus be recognized as a single token like ‘aujourd’hui’</p></li>
+<li><p>qu’aujourd’hui (that today) - today is in contracted form (qu’) and has to be separated from the rest of the word</p></li>
+<li><p>c’est (this is) is ce (C’) combined with est and has to be split in two words</p></li>
+<li><p>l’évaluer (evaluate it) is two words, where one is in contracted form and has to be separated</p></li>
+<li><p>faudra-t-il (will it take) - consists of will (faudra), -t is used to prevent two vowels from clashing and should not be tokenized</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">([</span><span class="n">nltk</span><span class="o">.</span><span class="n">tokenize</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="s2">&quot;On nous dit qu’aujourd’hui c’est le cas, encore faudra-t-il l’évaluer.&quot;</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">token</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;On nous dit qu’aujourd’hui c’est le cas, encore faudra-t-il l’évaluer.&quot;</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;On&#39;, &#39;nous&#39;, &#39;dit&#39;, &#39;qu&#39;, &#39;’&#39;, &#39;aujourd&#39;, &#39;’&#39;, &#39;hui&#39;, &#39;c&#39;, &#39;’&#39;, &#39;est&#39;, &#39;le&#39;, &#39;cas&#39;, &#39;,&#39;, &#39;encore&#39;, &#39;faudra-t-il&#39;, &#39;l&#39;, &#39;’&#39;, &#39;évaluer&#39;, &#39;.&#39;]]
+[&#39;On&#39;, &#39;nous&#39;, &#39;dit&#39;, &#39;qu’aujourd’hui&#39;, &#39;c’est&#39;, &#39;le&#39;, &#39;cas&#39;, &#39;,&#39;, &#39;encore&#39;, &#39;faudra&#39;, &#39;-&#39;, &#39;t&#39;, &#39;-&#39;, &#39;il&#39;, &#39;l’évaluer&#39;, &#39;.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s use the language-specific tokenization:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp_fr</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;fr_core_news_sm&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">token</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">nlp_fr</span><span class="p">(</span><span class="s2">&quot;On nous dit qu’aujourd’hui c’est le cas, encore faudra-t-il l’évaluer.&quot;</span><span class="p">)])</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">tokenize</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="s2">&quot;On nous dit qu’aujourd’hui c’est le cas, encore faudra-t-il l’évaluer.&quot;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;french&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;On&#39;, &#39;nous&#39;, &#39;dit&#39;, &#39;qu’&#39;, &#39;aujourd’&#39;, &#39;hui&#39;, &#39;c’&#39;, &#39;est&#39;, &#39;le&#39;, &#39;cas&#39;, &#39;,&#39;, &#39;encore&#39;, &#39;faudra&#39;, &#39;-&#39;, &#39;t&#39;, &#39;-&#39;, &#39;il&#39;, &#39;l’&#39;, &#39;évaluer&#39;, &#39;.&#39;]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;On&#39;,
+ &#39;nous&#39;,
+ &#39;dit&#39;,
+ &#39;qu&#39;,
+ &#39;’&#39;,
+ &#39;aujourd&#39;,
+ &#39;’&#39;,
+ &#39;hui&#39;,
+ &#39;c&#39;,
+ &#39;’&#39;,
+ &#39;est&#39;,
+ &#39;le&#39;,
+ &#39;cas&#39;,
+ &#39;,&#39;,
+ &#39;encore&#39;,
+ &#39;faudra-t-il&#39;,
+ &#39;l&#39;,
+ &#39;’&#39;,
+ &#39;évaluer&#39;,
+ &#39;.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="references">
+<h4>References:<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>Introduction to Spacy and its features: <a class="reference external" href="https://spacy.io/usage/spacy-101">https://spacy.io/usage/spacy-101</a></p></li>
+<li><p>NLTK tokenization functionalities: <a class="reference external" href="https://www.nltk.org/api/nltk.tokenize.html">https://www.nltk.org/api/nltk.tokenize.html</a></p></li>
+<li><p>On rules and different languages: <a class="reference external" href="http://ceur-ws.org/Vol-2226/paper9.pdf">http://ceur-ws.org/Vol-2226/paper9.pdf</a></p></li>
+<li><p>Why do we need language-specific tokenization: <a class="reference external" href="https://stackoverflow.com/questions/17314506/why-do-i-need-a-tokenizer-for-each-language">https://stackoverflow.com/questions/17314506/why-do-i-need-a-tokenizer-for-each-language</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="introduction-to-pytorch-https-pytorch-org">
+<h2>Introduction to PyTorch <a class="reference external" href="https://pytorch.org/">https://pytorch.org/</a><a class="headerlink" href="#introduction-to-pytorch-https-pytorch-org" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
+
+<span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;torch._C.Generator at 0x7fe6747976b0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="dataset-and-bag-of-words">
+<h3>Dataset and Bag-of-Words<a class="headerlink" href="#dataset-and-bag-of-words" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;me gusta comer en la cafeteria&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="s2">&quot;SPANISH&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Give it to me&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="s2">&quot;ENGLISH&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;No creo que sea una buena idea&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="s2">&quot;SPANISH&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;No it is not a good idea to get lost at sea&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="s2">&quot;ENGLISH&quot;</span><span class="p">)]</span>
+
+<span class="n">test_data</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Yo creo que si&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="s2">&quot;SPANISH&quot;</span><span class="p">),</span>
+             <span class="p">(</span><span class="s2">&quot;it is lost on me&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="s2">&quot;ENGLISH&quot;</span><span class="p">)]</span>
+<span class="n">label_to_ix</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;SPANISH&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;ENGLISH&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Typically a common way to read in data in PyTorch is to use one of the two following classes: <code class="docutils literal notranslate"><span class="pre">torch.utils.data.Dataset</span></code> and <code class="docutils literal notranslate"><span class="pre">torch.utils.data.DataLoader</span></code>. Since today we work with a tiny dataset, we omit this part.</p>
+<p>Now we represent the data as Bag-of-Words (BoW) which is a simple way of extracting features from text describing the occurrence of words within a document. Intuitevely, similar documents have similar content.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to map each word in the vocab to an unique integer</span>
+<span class="c1"># Indexing the Bag of words vector</span>
+<span class="n">word_to_ix</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">sent</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">data</span> <span class="o">+</span> <span class="n">test_data</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sent</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">word_to_ix</span><span class="p">:</span>
+            <span class="n">word_to_ix</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">word_to_ix</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">word_to_ix</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;me&#39;: 0, &#39;gusta&#39;: 1, &#39;comer&#39;: 2, &#39;en&#39;: 3, &#39;la&#39;: 4, &#39;cafeteria&#39;: 5, &#39;Give&#39;: 6, &#39;it&#39;: 7, &#39;to&#39;: 8, &#39;No&#39;: 9, &#39;creo&#39;: 10, &#39;que&#39;: 11, &#39;sea&#39;: 12, &#39;una&#39;: 13, &#39;buena&#39;: 14, &#39;idea&#39;: 15, &#39;is&#39;: 16, &#39;not&#39;: 17, &#39;a&#39;: 18, &#39;good&#39;: 19, &#39;get&#39;: 20, &#39;lost&#39;: 21, &#39;at&#39;: 22, &#39;Yo&#39;: 23, &#39;si&#39;: 24, &#39;on&#39;: 25}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">VOCAB_SIZE</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">word_to_ix</span><span class="p">)</span>
+<span class="n">NUM_LABELS</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="custom-classifier">
+<h3>Custom Classifier<a class="headerlink" href="#custom-classifier" title="Permalink to this headline">#</a></h3>
+<p>Our classifier inherits from the <code class="docutils literal notranslate"><span class="pre">nn.Module</span></code> class which provides an interface to important methods used for constructing and working with our models.</p>
+<p>Here, we will implement a custom multi-layer feed forward neural network. In our example, we calculate:
+$<span class="math notranslate nohighlight">\( 
+y = final(nonlinear(linear(BoW))
+\)</span>$
+where nonlinear denotes a non-linear function (we use <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.ReLU.html"><code class="docutils literal notranslate"><span class="pre">nn.ReLU</span></code></a>) and the first and final layer are both linear functions implemented with<code class="docutils literal notranslate"><span class="pre">nn.Linear</span></code>. In practice, we create a <code class="docutils literal notranslate"><span class="pre">nn.Module</span></code> containing the definition of our model architecture in the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function. The <code class="docutils literal notranslate"><span class="pre">__forward__</span></code> function defines how tensors are processed by our model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BoWClassifier</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_labels</span><span class="p">,</span> <span class="n">vocab_size</span><span class="p">,</span> <span class="n">num_hidden</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="c1"># Calls the init function of nn.Module. </span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">BoWClassifier</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+        <span class="c1"># Define the parameters that you need.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">linear</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">num_hidden</span><span class="p">)</span>
+        <span class="c1"># non-linearity (here it is also a layer!)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nonlinear</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="c1"># final affine transformation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">final</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">num_hidden</span><span class="p">,</span> <span class="n">num_labels</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bow_vec</span><span class="p">):</span>
+        <span class="c1"># Pass the input through the linear layer,</span>
+        <span class="c1"># then pass that through log_softmax.</span>
+        <span class="c1"># Many non-linearities and other functions are in torch.nn.functional</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">final</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nonlinear</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">linear</span><span class="p">(</span><span class="n">bow_vec</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Functions to create BoW vectors</span>
+<span class="k">def</span> <span class="nf">make_bow_vector</span><span class="p">(</span><span class="n">sentence</span><span class="p">,</span> <span class="n">word_to_ix</span><span class="p">):</span>
+    <span class="n">vec</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word_to_ix</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sentence</span><span class="p">:</span>
+        <span class="n">vec</span><span class="p">[</span><span class="n">word_to_ix</span><span class="p">[</span><span class="n">word</span><span class="p">]]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">vec</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">make_target</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">label_to_ix</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">([</span><span class="n">label_to_ix</span><span class="p">[</span><span class="n">label</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">BoWClassifier</span></code> (or any other module you will create) stores knowledge of the models’s parameters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">BoWClassifier</span><span class="p">(</span><span class="n">NUM_LABELS</span><span class="p">,</span> <span class="n">VOCAB_SIZE</span><span class="p">)</span>
+
+<span class="c1"># The first output below is A, the second is b.</span>
+<span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter containing:
+tensor([[-0.0800,  0.0065, -0.0974,  0.0740, -0.1671,  0.1438, -0.1425, -0.1559,
+         -0.1239,  0.0888, -0.0725,  0.0734, -0.1664, -0.1190, -0.0720, -0.0385,
+         -0.1496,  0.1284, -0.0463,  0.0630,  0.1387,  0.0365,  0.0536,  0.1893,
+         -0.0885,  0.0621],
+        [-0.0873,  0.1402,  0.1566, -0.1808,  0.1674,  0.0936,  0.0855,  0.0807,
+          0.1630, -0.0259, -0.1659, -0.0563, -0.1381,  0.0130, -0.0366, -0.1052,
+         -0.0178,  0.1858, -0.0155,  0.0062, -0.0306,  0.0308,  0.1747,  0.1199,
+          0.0696,  0.0426]], requires_grad=True)
+Parameter containing:
+tensor([0.0462, 0.0758], requires_grad=True)
+Parameter containing:
+tensor([[-0.0914, -0.6572],
+        [-0.4373,  0.6036]], requires_grad=True)
+Parameter containing:
+tensor([ 0.0423, -0.5728], requires_grad=True)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We run the model on the test data before we train to compare with the results from a trained model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">text</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">test_data</span><span class="p">:</span>
+        <span class="n">bow_vec</span> <span class="o">=</span> <span class="n">make_bow_vector</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">word_to_ix</span><span class="p">)</span>
+        <span class="n">log_probs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">bow_vec</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">log_probs</span><span class="p">)</span>
+
+<span class="c1"># Print the matrix column corresponding to &quot;creo&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())[:,</span> <span class="n">word_to_ix</span><span class="p">[</span><span class="s2">&quot;creo&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[ 3.6781e-04, -6.1148e-01]])
+tensor([[-0.0398, -0.4974]])
+tensor([-0.0725, -0.1659], grad_fn=&lt;SelectBackward&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="training">
+<h3>Training<a class="headerlink" href="#training" title="Permalink to this headline">#</a></h3>
+<p>We set our loss function to cross entropy which combines <code class="docutils literal notranslate"><span class="pre">nn.LogSoftmax()</span></code> and <code class="docutils literal notranslate"><span class="pre">nn.NLLLoss()</span></code> (negative log likelihood) and calculate gradients with stochastic gradient descent.</p>
+<p>Usually we want to pass over the training data several times by setting a respective number of epochs. Since we have a tiny dataset, we will exaggerate with the number of epochs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss_function</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">instance</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="c1"># Step 1. Remember that PyTorch accumulates gradients.</span>
+        <span class="c1"># We need to clear them out before each instance</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+
+        <span class="c1"># Step 2. Make our BOW vector and also we must wrap the target in a</span>
+        <span class="c1"># Tensor as an integer. For example, if the target is SPANISH, then</span>
+        <span class="c1"># we wrap the integer 0. The loss function then knows that the 0th</span>
+        <span class="c1"># element of the log probabilities is the log probability</span>
+        <span class="c1"># corresponding to SPANISH</span>
+        <span class="n">bow_vec</span> <span class="o">=</span> <span class="n">make_bow_vector</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">word_to_ix</span><span class="p">)</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="n">make_target</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">label_to_ix</span><span class="p">)</span>
+
+        <span class="c1"># Step 3. Run our forward pass.</span>
+        <span class="n">log_probs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">bow_vec</span><span class="p">)</span>
+
+        <span class="c1"># Step 4. Compute the loss, gradients, and update the parameters by</span>
+        <span class="c1"># calling optimizer.step()</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_function</span><span class="p">(</span><span class="n">log_probs</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="evaluation">
+<h3>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">#</a></h3>
+<p>Let’s see if our model can now predict more accurately, if a sentence is written in English or Spanish!</p>
+<p>Indeed, the log probability for Spanish is much higher for the first sentence, while the log probability for English is much higher for the second sentence in the test data!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">instance</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">test_data</span><span class="p">:</span>
+        <span class="n">bow_vec</span> <span class="o">=</span> <span class="n">make_bow_vector</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">word_to_ix</span><span class="p">)</span>
+        <span class="n">log_probs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">bow_vec</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">log_probs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[ 1.3078, -1.9363]])
+tensor([[-1.5922,  0.9361]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())[:,</span> <span class="n">word_to_ix</span><span class="p">[</span><span class="s2">&quot;creo&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([-0.0725, -0.2638], grad_fn=&lt;SelectBackward&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="useful-links">
+<h3>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>PyTorch Tutorials:
+<a class="reference external" href="https://pytorch.org/tutorials/index.html">https://pytorch.org/tutorials/index.html</a></p></li>
+<li><p>Introduction to Pytorch notebook from Stanford: <a class="reference external" href="https://nbviewer.jupyter.org/github/cgpotts/cs224u/blob/master/tutorial_pytorch.ipynb">https://nbviewer.jupyter.org/github/cgpotts/cs224u/blob/master/tutorial_pytorch.ipynb</a></p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="course-project">
+<h2>Course Project<a class="headerlink" href="#course-project" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><strong>Group project</strong>, can be completed in a group of up to 3 students</p>
+<ul>
+<li><p>Released 1 September, hand-in 5 November 17:00</p>
+<ul>
+<li><p>joint report, contribution of each student should be stated clearly</p></li>
+<li><p>code as attachment</p></li>
+<li><p>individual mark for each group member, based on the quality and quantity of their contributions</p></li>
+<li><p>submission via Digital Exam</p></li>
+</ul>
+</li>
+<li><p>Assignment consists of several parts tied to weekly lecture topics</p></li>
+<li><p>Finding a group:</p>
+<ul>
+<li><p>deadline for group forming: <strong>13 September 17:00</strong></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
