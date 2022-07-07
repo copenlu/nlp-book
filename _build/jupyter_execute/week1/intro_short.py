@@ -51,20 +51,13 @@ get_ipython().run_cell_magic('html', '', '<script>\n  function code_toggle() {\n
 # ![gen](../img/shirtless.jpeg)
 
 # ## Summarisation
-# <div>
-# <img src="../img/summarization2.png" width="1400"/>
-# </div>
+# ![gen](../img/summarization2.png)
 
 # ## Question Answering
-# <div>
-# <img src="../img/qa2.png" width="900"/>
-# </div>
+# ![gen](../img/qa2.png)
 
 # ## Machine Comprehension
-# 
-# <div>
-# <img src="../img/comprehension.png" width="1200"/>
-# </div>
+# ![gen](../img/comprehension.png)
 
 # ## Personal Assistants
 # <table><tr>
@@ -97,7 +90,7 @@ get_ipython().run_cell_magic('html', '', '<script>\n  function code_toggle() {\n
 # Jane ate spaghetti in the presence of a silver spoon? (**company**)
 
 # ### Ambiguity on different linguistic levels
-# 
+# ![gen](../img/nlp_pyramid.png)
 # <img src="../img/nlp_pyramid.png" style="float:left;" width=45%></img>
 
 # ## Core NLP Tasks
