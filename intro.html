@@ -1,0 +1,697 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction &#8212; Stat-NLP Book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Week 1 Overview" href="week1/week_1_overview.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo_copenlu.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Stat-NLP Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Weeks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="week1/week_1_overview.html">
+   Week 1 Overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="week1/intro_short.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="week1/lab_1.html">
+     Lab 1
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  External Material
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown-notebooks.html">
+   Notebooks with MyST Markdown
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/copenlu/nlp-book/main?urlpath=tree/./intro.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/copenlu/nlp-book/blob/main/./intro.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/copenlu/nlp-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/copenlu/nlp-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/intro.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistical-nlp">
+   Statistical NLP
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ndak18000u-course-information">
+   NDAK18000U Course Information
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structure-of-this-book">
+   Structure of this Book
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table Of Contents
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methods">
+     Methods
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interaction">
+   Interaction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistical-nlp">
+   Statistical NLP
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ndak18000u-course-information">
+   NDAK18000U Course Information
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structure-of-this-book">
+   Structure of this Book
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table Of Contents
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methods">
+     Methods
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interaction">
+   Interaction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
+<p>Welcome to this interactive book on Statistical Natural Language Processing (NLP). NLP is a field that lies in the intersection of Computer Science, Artificial Intelligence (AI) and Linguistics with the goal to enable computers to solve tasks that require natural language <em>understanding</em> and/or <em>generation</em>. Such tasks are omnipresent in most of our day-to-day life: think of <a class="reference external" href="https://www.bing.com/translator/">Machine Translation</a>, Automatic <a class="reference external" href="https://www.youtube.com/watch?v=WFR3lOm_xhE">Question Answering</a> or even basic <a class="reference external" href="https://www.google.co.uk">Search</a>. All these tasks require the computer to process language in one way or another. But even if you ignore these practical applications, many people consider language to be at the heart of human intelligence, and this makes NLP (and its more linguistically motivated cousin, <a class="reference external" href="http://en.wikipedia.org/wiki/Computational_linguistics">Computational Linguistics</a>), important for its role in AI alone.</p>
+<section id="statistical-nlp">
+<h2>Statistical NLP<a class="headerlink" href="#statistical-nlp" title="Permalink to this headline">#</a></h2>
+<p>NLP is a vast field with beginnings dating back to at least the 1960s, and it is difficult to give a full account of every aspect of NLP. Hence, this book focuses on a sub-field of NLP termed Statistical NLP (SNLP). In SNLP computers aren’t directly programmed to process language; instead, they <em>learn</em> how language should be processed based on the <em>statistics</em> of a corpus of natural language. For example, a statistical machine translation system’s behaviour is affected by the statistics of a <em>parallel</em> corpus where each document in one language is paired with its translation in another. This approach has been dominating NLP research for almost two decades now, and has seen widespread in industry too. Notice that while Statistics and Machine Learning are, in general, quite different fields, for the purposes of this book we will mostly identify Statistical NLP with Machine Learning-based NLP.</p>
+</section>
+<section id="ndak18000u-course-information">
+<h2>NDAK18000U Course Information<a class="headerlink" href="#ndak18000u-course-information" title="Permalink to this headline">#</a></h2>
+<p>We will use materials from this interactive book throughout the course. Note that this book was originally developed for a <a class="reference external" href="https://github.com/uclmr/stat-nlp-book">15 ECTS course at UCL</a>, so we will not be covering all topics of the book and will cover some in less depth. For completeness and context, you can still access all book materials below.
+Materials are due to minor changes. Materials covered in each week are listed below and will be linked once they are close to finalised. The course schedule is tentative and subject to minor changes.
+The official course description can be found <a class="reference external" href="https://kurser.ku.dk/course/ndak18000u/2021-2022">here</a>.</p>
+<ul class="simple">
+<li><p>Week 36 (6-10 Sept)</p>
+<ul>
+<li><p>Lecture (Tuesday): Course Logistics (<span class="xref myst">slides</span>), Introduction to NLP (<span class="xref myst">slides</span>), Tokenisation &amp; Sentence Splitting (<span class="xref myst">notes</span>, <span class="xref myst">slides</span>, <a class="reference internal" href="exercises/tokenization.html"><span class="doc std std-doc">exercises</span></a>), Text Classification (<span class="xref myst">slides</span>)</p></li>
+<li><p>Lab (10.09 &amp; 13.09): Jupyter notebook setup, introduction to <a class="reference external" href="https://colab.research.google.com/">Colab</a>. Introduction to <a class="reference external" href="https://pytorch.org/tutorials/">PyTorch</a>. Project group arrangements. Questions about the course project. (<span class="xref myst">lab</span>)</p></li>
+</ul>
+</li>
+<li><p>Week 37 (13-17 Sept)</p>
+<ul>
+<li><p>Reading (before lecture): <a class="reference external" href="https://web.stanford.edu/~jurafsky/slp3/7.pdf">Jurafsky &amp; Martin Chapter 7 up to and including 7.4</a></p></li>
+<li><p>Lecture (Tuesday): Introduction to Representation Learning (<span class="xref myst">slides</span>), Language Modelling (partially) (<span class="xref myst">slides</span>)</p></li>
+<li><p>Lab (17.09 &amp; 20.09): Recurrent Neural Networks and word representations. Project help. (<span class="xref myst">lab</span>)</p></li>
+</ul>
+</li>
+<li><p>Week 38 (20-24 Sept)</p>
+<ul>
+<li><p>Reading (before lecture): <a class="reference external" href="https://web.stanford.edu/~jurafsky/slp3/9.pdf">Jurafsky &amp; Martin Chapter 9, up to and including 9.6</a></p></li>
+<li><p>Lecture (Tuesday): Language Modelling (rest) (<span class="xref myst">slides</span>), Recurrent Neural Networks (<span class="xref myst">slides</span>), Contextualised Word Representations (<span class="xref myst">slides</span>)</p></li>
+<li><p>Lab (24.09 &amp; 27.09): Language Models with <a class="reference external" href="https://huggingface.co/course/chapter1">Transformers</a> and RNNs. Project help. (<span class="xref myst">lab</span>)</p></li>
+</ul>
+</li>
+<li><p>Week 39 (27 Sept-1 Oct)</p>
+<ul>
+<li><p>Reading (before lecture): <a class="reference external" href="https://lilianweng.github.io/lil-log/2018/06/24/attention-attention.html"><em>Attention? Attention!</em> Blog post by Lilian Weng</a>; <a class="reference external" href="https://aclanthology.org/Q19-1004.pdf">Belinkov and Glass, 2020. <em>Analysis Methods in Neural Language Processing: A Survey</em></a></p></li>
+<li><p>Lecture (Tuesday): Attention (<span class="xref myst">slides</span>), Interpretability (<span class="xref myst">slides</span>)</p></li>
+<li><p>Lab (01.10 &amp; 04.10): Error analysis and explainability. Project help. (<span class="xref myst">lab</span>)</p></li>
+</ul>
+</li>
+<li><p>Week 40 (4-8 Oct)</p>
+<ul>
+<li><p>Reading (before lecture): <a class="reference external" href="https://web.stanford.edu/~jurafsky/slp3/8.pdf">Jurafsky &amp; Martin Chapter 8, up to and including 8.6</a>; <a class="reference external" href="https://web.stanford.edu/~jurafsky/slp3/9.pdf">9.2.2 in Chapter 9</a>; <a class="reference external" href="https://web.stanford.edu/~jurafsky/slp3/18.pdf">18.1 in Chapter 18</a></p></li>
+<li><p>Lecture (Tuesday): Sequence Labelling (<span class="xref myst">slides</span>, <span class="xref myst">notes</span>)</p></li>
+<li><p>Lab (08.10 &amp; 11.10): Sequence labelling. Beam search. Project help. (<span class="xref myst">lab</span>)</p></li>
+</ul>
+</li>
+<li><p>Week 41 (11-15 Oct)</p>
+<ul>
+<li><p>Reading (before lecture): <a class="reference external" href="https://ojs.aaai.org//index.php/aimagazine/article/view/1322">Cardie, 1997. <em>Empirical Methods in Information Extraction</em>, up to (not including) the section “Learning Extraction Patterns”</a>; <a class="reference external" href="http://veredshwartz.blogspot.com/2016/11/question-answering.html"><em>Question Answering</em>. Blog post by Vered Shwartz</a></p></li>
+<li><p>Lecture (Tuesday): Information Extraction (<span class="xref myst">slides</span>), Question Answering (<span class="xref myst">slides</span>)</p></li>
+<li><p>Lab (15.10 &amp; 25.10): In-depth look at Transformers and Multilingual QA. Project help. (<span class="xref myst">lab</span>)</p></li>
+</ul>
+</li>
+<li><p>Week 43 (25-29 Oct)</p>
+<ul>
+<li><p>Reading (before lecture): <a class="reference external" href="https://web.stanford.edu/~jurafsky/slp3/10.pdf">Jurafsky &amp; Martin Chapter 10, up to and including 10.8.2</a>, <a class="reference external" href="https://absalon.instructure.com/courses/52205/external_tools/14563">recorded lecture 8 part 2; recorded lecture 5 part 9</a></p></li>
+<li><p>Lecture (Tuesday): Machine Translation (<span class="xref myst">slides</span>), Cross-lingual Transfer Learning (<span class="xref myst">slides</span>)</p></li>
+<li><p>Lab (29.10 &amp; 01.11): Project help.</p></li>
+</ul>
+</li>
+<li><p>Week 44 (1-5 Nov)</p>
+<ul>
+<li><p>Reading (before lecture): <a class="reference external" href="https://web.stanford.edu/~jurafsky/slp3/14.pdf">Jurafsky &amp; Martin Chapter 14, <em>except</em> 14.5</a>; <a class="reference external" href="https://direct.mit.edu/coli/article/47/2/255/98516/Universal-Dependencies">de Marneffe et al., 2021. <em>Universal Dependencies</em>, up to and including 2.3.2</a></p></li>
+<li><p>Lecture (Tuesday): Dependency Parsing (<span class="xref myst">slides</span>)</p></li>
+<li><p>Lab (05.11): Project help.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="structure-of-this-book">
+<h2>Structure of this Book<a class="headerlink" href="#structure-of-this-book" title="Permalink to this headline">#</a></h2>
+<p>We think that to understand and apply SNLP in practice one needs knowledge of the following:</p>
+<ul class="simple">
+<li><p>Tasks (e.g. Machine Translation, Syntactic Parsing)</p></li>
+<li><p>Methods &amp; Frameworks (e.g. Discriminative Training, Linear Chain models, Representation Learning)</p></li>
+<li><p>Implementations (e.g. NLP data structures, efficient dynamic programming)</p></li>
+</ul>
+<p>The book is somewhat structured around the task dimension; that is, we will explore different methods, frameworks and their implementations, usually in the context of specific NLP applications.</p>
+<p>On a higher level the book is divided into <em>themes</em> that roughly correspond to learning paradigms within SNLP, and which follow a somewhat chronological order: we will start with generative learning, then discuss discriminative learning, then cover forms of weaker supervision to conclude with representation and deep learning. As an overarching theme we will use <em>structured prediction</em>, a formulation of machine learning that accounts for the fact that machine learning outputs are often not just classes, but structured objects such as sequences, trees or general graphs. This is a fitting approach, seeing as NLP tasks often require prediction of such structures.</p>
+</section>
+<section id="table-of-contents">
+<h2>Table Of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Course Logistics: <span class="xref myst">slides</span></p></li>
+<li><p>Introduction to NLP: <span class="xref myst">slides1</span>, <span class="xref myst">slides2</span></p></li>
+<li><p>Structured Prediction: <span class="xref myst">notes</span>, <span class="xref myst">slides</span>, <a class="reference internal" href="exercises/structured_prediction.html"><span class="doc std std-doc">exercises</span></a></p></li>
+<li><p>Tokenisation and Sentence Splitting: <span class="xref myst">notes</span>, <span class="xref myst">slides</span>, <a class="reference internal" href="exercises/tokenization.html"><span class="doc std std-doc">exercises</span></a></p></li>
+<li><p>Generative Learning:</p>
+<ul>
+<li><p>Language Models (MLE, smoothing): <span class="xref myst">notes</span>, <span class="xref myst">slides</span>, <a class="reference internal" href="exercises/language_models.html"><span class="doc std std-doc">exercises</span></a></p>
+<ul>
+<li><p>Maximum Likelihood Estimation: <span class="xref myst">notes</span>, <span class="xref myst">slides</span></p></li>
+</ul>
+</li>
+<li><p>Machine Translation (EM algorithm, beam-search, encoder-decoder models): <span class="xref myst">notes</span>, <span class="xref myst">slides1</span>, <span class="xref myst">slides2</span> <a class="reference internal" href="exercises/mt.html"><span class="doc std std-doc">exercises</span></a></p></li>
+<li><p>Constituent Parsing (PCFG, dynamic programming): <span class="xref myst">notes</span>, <span class="xref myst">slides</span>, <a class="reference internal" href="exercises/parsing.html"><span class="doc std std-doc">exercises</span></a></p></li>
+<li><p>Dependency Parsing (transition based parsing): <span class="xref myst">notes</span>, <span class="xref myst">slides</span></p></li>
+</ul>
+</li>
+<li><p>Discriminative Learning:</p>
+<ul>
+<li><p>Text Classification (logistic regression): <span class="xref myst">notes</span>, <span class="xref myst">slides1</span>, <span class="xref myst">slides2</span></p></li>
+<li><p>Sequence Labelling (linear chain models): <span class="xref myst">notes</span>, <span class="xref myst">slides</span></p></li>
+<li><p>Sequence Labelling (CRF): <span class="xref myst">slides</span></p></li>
+</ul>
+</li>
+<li><p>Weak Supervision:</p>
+<ul>
+<li><p>Relation Extraction (distant supervision, semi-supervised learning) <span class="xref myst">notes</span>, <a class="reference external" href="https://www.dropbox.com/s/xqq1nwgw1i0gowr/relation-extraction.pdf?dl=0">slides</a>, <span class="xref myst">interactive-slides</span></p></li>
+</ul>
+</li>
+<li><p>Representation and Deep Learning</p>
+<ul>
+<li><p>Overview and Multi-layer Perceptrons <span class="xref myst">slides</span></p></li>
+<li><p>Word Representations <span class="xref myst">slides</span></p></li>
+<li><p>Contextualised Word Representations <span class="xref myst">slides</span></p></li>
+<li><p>Recurrent Neural Networks <span class="xref myst">slides1</span>, <span class="xref myst">slides2</span></p></li>
+<li><p>Attention (<span class="xref myst">slides</span></p></li>
+<li><p>Transfer Learning <span class="xref myst">slides</span></p></li>
+<li><p>Textual Entailment (RNNs) <span class="xref myst">slides</span></p></li>
+<li><p>Interpretability (<span class="xref myst">slides</span></p></li>
+</ul>
+</li>
+</ul>
+<section id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">#</a></h3>
+<p>We have a few dedicated method chapters:</p>
+<ul class="simple">
+<li><p>Structured Prediction: <span class="xref myst">notes</span></p></li>
+<li><p>Maximum Likelihood Estimation: <span class="xref myst">notes</span></p></li>
+<li><p>EM-Algorithm: <span class="xref myst">notes</span></p></li>
+</ul>
+</section>
+</section>
+<section id="interaction">
+<h2>Interaction<a class="headerlink" href="#interaction" title="Permalink to this headline">#</a></h2>
+<p>The best way to learn language processing with computers is
+to process language with computers. For this reason this book features interactive
+code blocks that we use to show NLP in practice, and that you can use
+to test and investigate methods and language. We use the <a class="reference external" href="https://www.python.org/">Python language</a> throughout this book because it offers a large number of relevant libraries and it is easy to learn.</p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
+<p>To install the book locally and use it interactively follow the installation instruction on <a class="reference external" href="https://github.com/uclmr/stat-nlp-book">GitHub</a>.</p>
+<p>Setup tutorials:</p>
+<ul class="simple">
+<li><p><span class="xref myst">Azure tutorial</span></p></li>
+</ul>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="week1/week_1_overview.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week 1 Overview</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Nadav Borenstein (and his minions)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

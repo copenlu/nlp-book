@@ -1,0 +1,88 @@
+Traceback (most recent call last):
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import math
+import numpy as np
+
+x_space = ['I ate an apple', 
+           'I ate a red apple', 
+           'Yesterday I ate a red apple', 
+           'Yesterday I ate a red apply with a friend']
+y_space = ['Ich aß einen Apfel',
+           'Ich aß einen roten Apfel',
+           'Gestern aß ich einen roten Apfel',
+           'Gestern aß ich einen roten Apfel mit einem Freund']
+data = list(zip(x_space,y_space))
+train = data[:2]
+test = data[2:]
+
+def f(x):
+    """Calculate a representation of the input `x`."""
+    return len(x)
+def g(y):
+    """Calculate a representation of the output `y`."""
+    return len(y)
+
+def s(theta,x,y):
+    """Measure the compatibility of sentences `x` and `y` using parameter `theta`"""
+    return -abs(theta * f(x) - g(y))
+
+def loss(theta, data):
+    """Measure the total number of errors made when predicting with parameter `theta` on training set `data`"""
+    total = 0.0
+    for x,y in data:
+        max_score = -math.inf
+        result = None
+        for y_guess in y_space:
+            score = s(theta,x,y_guess)
+            if score > max_score:
+                result = y_guess
+                max_score = score
+        if result != y:
+            total += 1.0
+    return total
+
+
+thetas = np.linspace(0.0, 2.0, num=1000)
+theta_star = thetas[np.argmin([loss(theta,train) for theta in thetas])]
+
+def predict(theta, x):
+    """Find the most compatible output sentence given the input sentence `x` and parameter `theta`"""
+    max_score = -math.inf
+    result = None
+    for y_guess in y_space:
+        score = s(theta,x,y_guess)
+        if score > max_score:
+            result = y_guess
+            max_score = score
+    return result
+
+util.Table([(x,predict(theta_star, x)) for x,_ in test])
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Input [0;32mIn [2][0m, in [0;36m<cell line: 57>[0;34m()[0m
+[1;32m     54[0m             max_score [38;5;241m=[39m score
+[1;32m     55[0m     [38;5;28;01mreturn[39;00m result
+[0;32m---> 57[0m [43mutil[49m[38;5;241m.[39mTable([(x,predict(theta_star, x)) [38;5;28;01mfor[39;00m x,_ [38;5;129;01min[39;00m test])
+
+[0;31mNameError[0m: name 'util' is not defined
+NameError: name 'util' is not defined
+
