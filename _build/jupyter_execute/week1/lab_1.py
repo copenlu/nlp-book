@@ -6,7 +6,7 @@
 # ```{image} ../img/karolina_featured.png
 # :alt: Karolina
 # :class: bg-primary mb-1
-# :width: 300px
+# :width: 200px
 # :align: left
 # ```
 
