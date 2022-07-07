@@ -7,7 +7,7 @@
 # :alt: Karolina
 # :class: bg-primary mb-1
 # :width: 200px
-# :align: left
+# :align: center
 # ```
 
 # ## Lab Schedule
