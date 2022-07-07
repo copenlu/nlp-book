@@ -10,9 +10,9 @@
 #      <td style="text-align:center">Karolina Stanczak</td>
 #   </tr>
 #     <tr>
-#   <td><img src="pepa_featured.png" width="250px" /></td>
-#   <td><img src="dustin_featured.jpg" width="210px" /></td>
-#   <td><img src="karolina_featured.png" width="250px" /></td>
+#   <td><img alt="../img/pepa_featured.png" src="../img/pepa_featured.png" width="250px" /></td>
+#   <td><img alt="../img/dustin_featured.png" src="../img/dustin_featured.jpg" width="210px" /></td>
+#   <td><img alt="../img/karolina_featured.png" src="../img/karolina_featured.png" width="250px" /></td>
 #     </tr>
 # </table>
 
