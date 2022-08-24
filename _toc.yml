@@ -10,7 +10,7 @@ parts:
       sections:
         - file: week1/intro_short
         - file: week1/lab_1
-        - file: week1/tokenization
+        - file: tokenization
 
   - caption: External Material
     chapters:
