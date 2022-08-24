@@ -51,15 +51,14 @@
 # ```
 
 # ## Question Answering
-# <div>
-# <img src="../img/qa.png" width="400"/>
-# </div>
-# <div>
-# <img src="../img/qa2.png" width="900"/>
-# </div>
-# <div style="text-align: right;">
-# <a href="https://doi.org/10.1016/j.artint.2012.06.009">Ferrucci et al. (2013)</a>
-# </div>
+# ```{image} ../img/qa.png
+# :width: 400px
+# :align: center
+# ```
+# ```{image} ../img/qa2.png
+# :width: 900px
+# :align: center
+# ```
 
 # ## Reading Comprehension
 # 
