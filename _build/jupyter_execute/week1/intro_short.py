@@ -28,7 +28,7 @@
 
 # ## Machine Translation
 # 
-# ![mt](../img/mt_figures/avocado.png)
+# ![mt](../img/avocado.png)
 # 
 # http://translate.google.com/
 
