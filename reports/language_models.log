@@ -17,37 +17,32 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import statnlpbook.util as util
-util.execute_notebook('load_ohhla.ipynb')
-# docs = load_albums(j_live)
-# docs = load_all_songs("../data/ohhla/train")
-docs = load_all_songs("../data/ohhla/train/www.ohhla.com/anonymous/j_live/")
-trainDocs, testDocs = docs[:len(docs)//2], docs[len(docs)//2:] 
-train = words(trainDocs)
-test = words(testDocs)
-" ".join(train[0:35])
+%load_ext autoreload
+%autoreload 2
+%matplotlib inline
+import sys, os
+_snlp_book_dir = ".."
+sys.path.append(_snlp_book_dir) 
+from statnlpbook.lm import *
+from statnlpbook.ohhla import *
+# %cd .. 
+import sys
+sys.path.append("..")
+import matplotlib
+import matplotlib.pyplot as plt
+import pandas as pd
+matplotlib.rcParams['figure.figsize'] = (10.0, 6.0)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Input [0;32mIn [3][0m, in [0;36m<cell line: 1>[0;34m()[0m
-[0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mstatnlpbook[39;00m[38;5;21;01m.[39;00m[38;5;21;01mutil[39;00m [38;5;28;01mas[39;00m [38;5;21;01mutil[39;00m
-[1;32m      2[0m util[38;5;241m.[39mexecute_notebook([38;5;124m'[39m[38;5;124mload_ohhla.ipynb[39m[38;5;124m'[39m)
-[1;32m      3[0m [38;5;66;03m# docs = load_albums(j_live)[39;00m
-[1;32m      4[0m [38;5;66;03m# docs = load_all_songs("../data/ohhla/train")[39;00m
+Input [0;32mIn [1][0m, in [0;36m<cell line: 7>[0;34m()[0m
+[1;32m      5[0m _snlp_book_dir [38;5;241m=[39m [38;5;124m"[39m[38;5;124m..[39m[38;5;124m"[39m
+[1;32m      6[0m sys[38;5;241m.[39mpath[38;5;241m.[39mappend(_snlp_book_dir) 
+[0;32m----> 7[0m [38;5;28;01mfrom[39;00m [38;5;21;01mstatnlpbook[39;00m[38;5;21;01m.[39;00m[38;5;21;01mlm[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
+[1;32m      8[0m [38;5;28;01mfrom[39;00m [38;5;21;01mstatnlpbook[39;00m[38;5;21;01m.[39;00m[38;5;21;01mohhla[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
+[1;32m      9[0m [38;5;66;03m# %cd .. [39;00m
 
-File [0;32m~/gits/nlp-course/nlp-book/stat-nlp-book/chapters/../statnlpbook/util.py:47[0m, in [0;36m<module>[0;34m[0m
-[1;32m     43[0m             [38;5;28;01mfor[39;00m head [38;5;129;01min[39;00m lists[[38;5;241m0[39m]:
-[1;32m     44[0m                 [38;5;28;01myield[39;00m (head,) [38;5;241m+[39m prev_tuple
-[0;32m---> 47[0m [38;5;28;01mimport[39;00m [38;5;21;01mmpld3[39;00m
-[1;32m     50[0m [38;5;28;01mdef[39;00m [38;5;21mplot_bar_graph[39m(values, labels, rotation[38;5;241m=[39m[38;5;241m0[39m, align[38;5;241m=[39m[38;5;124m'[39m[38;5;124mcenter[39m[38;5;124m'[39m, use_mpld3[38;5;241m=[39m[38;5;28;01mFalse[39;00m):
-[1;32m     51[0m     [38;5;124;03m"""[39;00m
-[1;32m     52[0m [38;5;124;03m    Plots a bar graph.[39;00m
-[1;32m     53[0m [38;5;124;03m    Args:[39;00m
-[0;32m   (...)[0m
-[1;32m     61[0m 
-[1;32m     62[0m [38;5;124;03m    """[39;00m
-
-[0;31mModuleNotFoundError[0m: No module named 'mpld3'
-ModuleNotFoundError: No module named 'mpld3'
+[0;31mModuleNotFoundError[0m: No module named 'statnlpbook'
+ModuleNotFoundError: No module named 'statnlpbook'
 
