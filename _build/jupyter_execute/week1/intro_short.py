@@ -48,6 +48,11 @@
 # <div>
 # <img src="../img/summarization2.png" width="1400"/>
 # </div>
+# 
+# ```{image} ../img/summarization2.png
+# :width: 1400px
+# :align: center
+# ```
 
 # ## Question Answering
 # <div>
