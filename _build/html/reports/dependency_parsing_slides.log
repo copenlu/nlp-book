@@ -1,0 +1,51 @@
+Traceback (most recent call last):
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+conllu = """
+# ID	FORM	LEMMA	UPOS	XPOS	FEATS	HEAD	DEPREL	DEPS	MISC
+1	Kraft	Kraft	NOUN	NN	_	7	nsubj	_	_
+2	,	,	PUNCT	,	_	1	punct	_	_
+3	owner	owner	NOUN	NN	_	1	appos	_	_
+4	of	of	ADP	IN	_	5	case	_	_
+5	Milka	Milka	PROPN	NNP	_	3	nmod	_	_
+6	,	,	PUNCT	,	_	7	punct	_	_
+7	purchased	purchase	VERB	VBD	_	0	root	_	_
+8	Cadbury	Cadbury	PROPN	NNP	_	7	dobj	_	_
+9	Dairy	Dairy	PROPN	NNP	_	8	flat	_	_
+10	Milk	milk	PROPN	NNP	_	8	flat	_	_
+"""
+arcs, tokens = to_displacy_graph(*load_arcs_tokens(conllu))
+render_displacy(arcs, tokens,"1200px")
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Input [0;32mIn [4][0m, in [0;36m<cell line: 14>[0;34m()[0m
+[1;32m      1[0m conllu [38;5;241m=[39m [38;5;124m"""[39m
+[1;32m      2[0m [38;5;124m# ID	FORM	LEMMA	UPOS	XPOS	FEATS	HEAD	DEPREL	DEPS	MISC[39m
+[1;32m      3[0m [38;5;124m1	Kraft	Kraft	NOUN	NN	_	7	nsubj	_	_[39m
+[0;32m   (...)[0m
+[1;32m     12[0m [38;5;124m10	Milk	milk	PROPN	NNP	_	8	flat	_	_[39m
+[1;32m     13[0m [38;5;124m"""[39m
+[0;32m---> 14[0m arcs, tokens [38;5;241m=[39m [43mto_displacy_graph[49m([38;5;241m*[39mload_arcs_tokens(conllu))
+[1;32m     15[0m render_displacy(arcs, tokens,[38;5;124m"[39m[38;5;124m1200px[39m[38;5;124m"[39m)
+
+[0;31mNameError[0m: name 'to_displacy_graph' is not defined
+NameError: name 'to_displacy_graph' is not defined
+

@@ -17,32 +17,32 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-%load_ext autoreload
-%autoreload 2
-%matplotlib inline
-import sys, os
-_snlp_book_dir = ".."
-sys.path.append(_snlp_book_dir) 
-from statnlpbook.lm import *
-from statnlpbook.ohhla import *
-# %cd .. 
-import sys
-sys.path.append("..")
-import matplotlib
-import matplotlib.pyplot as plt
-import pandas as pd
-matplotlib.rcParams['figure.figsize'] = (10.0, 6.0)
+def sanity_check(lm, *history):
+    """Throws an AssertionError if lm does not define a valid probability distribution for all words 
+    in the vocabulary."""  
+    probability_mass = sum([lm.probability(word, *history) for word in lm.vocab])
+    assert abs(probability_mass - 1.0) < 1e-6, probability_mass
+
+unigram = NGramLM(oov_train,1)
+stupid = StupidBackoff(bigram, unigram, 0.1)
+print(sum([stupid.probability(word, 'the') for word in stupid.vocab]))
+assert OOV in stupid.vocab
+sanity_check(stupid, 'the')
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Input [0;32mIn [1][0m, in [0;36m<cell line: 7>[0;34m()[0m
-[1;32m      5[0m _snlp_book_dir [38;5;241m=[39m [38;5;124m"[39m[38;5;124m..[39m[38;5;124m"[39m
-[1;32m      6[0m sys[38;5;241m.[39mpath[38;5;241m.[39mappend(_snlp_book_dir) 
-[0;32m----> 7[0m [38;5;28;01mfrom[39;00m [38;5;21;01mstatnlpbook[39;00m[38;5;21;01m.[39;00m[38;5;21;01mlm[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
-[1;32m      8[0m [38;5;28;01mfrom[39;00m [38;5;21;01mstatnlpbook[39;00m[38;5;21;01m.[39;00m[38;5;21;01mohhla[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
-[1;32m      9[0m [38;5;66;03m# %cd .. [39;00m
+[0;31mAssertionError[0m                            Traceback (most recent call last)
+Input [0;32mIn [4][0m, in [0;36m<cell line: 11>[0;34m()[0m
+[1;32m      9[0m [38;5;28mprint[39m([38;5;28msum[39m([stupid[38;5;241m.[39mprobability(word, [38;5;124m'[39m[38;5;124mthe[39m[38;5;124m'[39m) [38;5;28;01mfor[39;00m word [38;5;129;01min[39;00m stupid[38;5;241m.[39mvocab]))
+[1;32m     10[0m [38;5;28;01massert[39;00m OOV [38;5;129;01min[39;00m stupid[38;5;241m.[39mvocab
+[0;32m---> 11[0m [43msanity_check[49m[43m([49m[43mstupid[49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mthe[39;49m[38;5;124;43m'[39;49m[43m)[49m
 
-[0;31mModuleNotFoundError[0m: No module named 'statnlpbook'
-ModuleNotFoundError: No module named 'statnlpbook'
+Input [0;32mIn [4][0m, in [0;36msanity_check[0;34m(lm, *history)[0m
+[1;32m      2[0m [38;5;124;03m"""Throws an AssertionError if lm does not define a valid probability distribution for all words [39;00m
+[1;32m      3[0m [38;5;124;03min the vocabulary."""[39;00m  
+[1;32m      4[0m probability_mass [38;5;241m=[39m [38;5;28msum[39m([lm[38;5;241m.[39mprobability(word, [38;5;241m*[39mhistory) [38;5;28;01mfor[39;00m word [38;5;129;01min[39;00m lm[38;5;241m.[39mvocab])
+[0;32m----> 5[0m [38;5;28;01massert[39;00m [38;5;28mabs[39m(probability_mass [38;5;241m-[39m [38;5;241m1.0[39m) [38;5;241m<[39m [38;5;241m1e-6[39m, probability_mass
+
+[0;31mAssertionError[0m: 1.0661659877800416
+AssertionError: 1.0661659877800416
 

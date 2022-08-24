@@ -17,44 +17,24 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-def loadSyntRepr(path="../data/ie/ie_training_data.sents.parse"):
-    file = open(path, "r")
-    
-    sents = []
-    s = []
-    for l in file:
-        l = l.strip()
-        data = l.split("\t")
-        print(data)
-        if len(data) < 10:
-            sents.append(s)
-            s = []
-            continue
-            
-        wid, token, lemma, upostag, xpostag, feats, head, deprel, deps, misc = data
-        s.append(data)
-        
-    if len(s) != 0:
-        sents.append(s)
-    
-    return sents
-        
-sents = loadSyntRepr()
+from sklearn.feature_extraction.text import CountVectorizer
+
+def featTransform(sents_train, sents_test):
+    cv = CountVectorizer()
+    cv.fit(sents_train)
+    print(cv.get_params())
+    features_train = cv.transform(sents_train)
+    features_test = cv.transform(sents_test)
+    return features_train, features_test, cv
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-Input [0;32mIn [2][0m, in [0;36m<cell line: 23>[0;34m()[0m
-[1;32m     19[0m         sents[38;5;241m.[39mappend(s)
-[1;32m     21[0m     [38;5;28;01mreturn[39;00m sents
-[0;32m---> 23[0m sents [38;5;241m=[39m [43mloadSyntRepr[49m[43m([49m[43m)[49m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Input [0;32mIn [12][0m, in [0;36m<cell line: 1>[0;34m()[0m
+[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01msklearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mfeature_extraction[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtext[39;00m [38;5;28;01mimport[39;00m CountVectorizer
+[1;32m      3[0m [38;5;28;01mdef[39;00m [38;5;21mfeatTransform[39m(sents_train, sents_test):
+[1;32m      4[0m     cv [38;5;241m=[39m CountVectorizer()
 
-Input [0;32mIn [2][0m, in [0;36mloadSyntRepr[0;34m(path)[0m
-[1;32m      1[0m [38;5;28;01mdef[39;00m [38;5;21mloadSyntRepr[39m(path[38;5;241m=[39m[38;5;124m"[39m[38;5;124m../data/ie/ie_training_data.sents.parse[39m[38;5;124m"[39m):
-[0;32m----> 2[0m     file [38;5;241m=[39m [38;5;28;43mopen[39;49m[43m([49m[43mpath[49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mr[39;49m[38;5;124;43m"[39;49m[43m)[49m
-[1;32m      4[0m     sents [38;5;241m=[39m []
-[1;32m      5[0m     s [38;5;241m=[39m []
-
-[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '../data/ie/ie_training_data.sents.parse'
-FileNotFoundError: [Errno 2] No such file or directory: '../data/ie/ie_training_data.sents.parse'
+[0;31mModuleNotFoundError[0m: No module named 'sklearn'
+ModuleNotFoundError: No module named 'sklearn'
 
