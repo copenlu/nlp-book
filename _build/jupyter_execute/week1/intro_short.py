@@ -72,7 +72,7 @@
 # :width: 500px
 # ```
 # ---
-# ```{figure} ../img/siri1.png
+# ```{figure} ../img/siri2.png
 # :width: 500px
 # ```
 
