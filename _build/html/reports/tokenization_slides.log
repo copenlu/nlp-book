@@ -17,38 +17,18 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-%load_ext autoreload
-%autoreload 2
-%matplotlib inline
-import sys, os
-_snlp_book_dir = ".."
-sys.path.append(_snlp_book_dir) 
-import statnlpbook.word_mt as word_mt
-# %cd .. 
-import sys
-sys.path.append("..")
-import matplotlib
-import matplotlib.pyplot as plt
-import pandas as pd
-matplotlib.rcParams['figure.figsize'] = (10.0, 6.0)
-from collections import defaultdict 
-import statnlpbook.util as util
-from statnlpbook.lm import *
-from statnlpbook.util import safe_log as log
-import statnlpbook.mt as mt
-
-
+tokens = re.compile('Mr.|[\w\']+|[.?]').findall(text)
+# try different regular expressions
+tok.sentence_segment(re.compile('\.'), tokens)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Input [0;32mIn [1][0m, in [0;36m<cell line: 7>[0;34m()[0m
-[1;32m      5[0m _snlp_book_dir [38;5;241m=[39m [38;5;124m"[39m[38;5;124m..[39m[38;5;124m"[39m
-[1;32m      6[0m sys[38;5;241m.[39mpath[38;5;241m.[39mappend(_snlp_book_dir) 
-[0;32m----> 7[0m [38;5;28;01mimport[39;00m [38;5;21;01mstatnlpbook[39;00m[38;5;21;01m.[39;00m[38;5;21;01mword_mt[39;00m [38;5;28;01mas[39;00m [38;5;21;01mword_mt[39;00m
-[1;32m      8[0m [38;5;66;03m# %cd .. [39;00m
-[1;32m      9[0m [38;5;28;01mimport[39;00m [38;5;21;01msys[39;00m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Input [0;32mIn [11][0m, in [0;36m<cell line: 3>[0;34m()[0m
+[1;32m      1[0m tokens [38;5;241m=[39m re[38;5;241m.[39mcompile([38;5;124m'[39m[38;5;124mMr.|[[39m[38;5;124m\[39m[38;5;124mw[39m[38;5;130;01m\'[39;00m[38;5;124m]+|[.?][39m[38;5;124m'[39m)[38;5;241m.[39mfindall(text)
+[1;32m      2[0m [38;5;66;03m# try different regular expressions[39;00m
+[0;32m----> 3[0m [43mtok[49m[38;5;241m.[39msentence_segment(re[38;5;241m.[39mcompile([38;5;124m'[39m[38;5;124m\[39m[38;5;124m.[39m[38;5;124m'[39m), tokens)
 
-[0;31mModuleNotFoundError[0m: No module named 'statnlpbook'
-ModuleNotFoundError: No module named 'statnlpbook'
+[0;31mNameError[0m: name 'tok' is not defined
+NameError: name 'tok' is not defined
 

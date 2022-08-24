@@ -73,7 +73,7 @@
 # ### About You: previously taken courses related to NLP?
 # 
 
-# In[1]:
+# In[2]:
 
 
 import numpy as np
@@ -99,7 +99,7 @@ plt.show()
 # ### About You: previously taken courses in Machine Learning?
 # 
 
-# In[2]:
+# In[3]:
 
 
 import numpy as np
@@ -125,7 +125,7 @@ plt.show()
 # ### About You: experience with using neural network software libraries?
 # 
 
-# In[3]:
+# In[8]:
 
 
 import numpy as np
@@ -151,7 +151,7 @@ plt.show()
 # ### About You: degree are you enrolled in
 # 
 
-# In[4]:
+# In[5]:
 
 
 import numpy as np
@@ -177,7 +177,7 @@ plt.show()
 # ### About You: what you want to get out of this course
 # 
 
-# In[5]:
+# In[6]:
 
 
 import numpy as np
@@ -209,7 +209,7 @@ plt.show()
 # ### About You: what you want to get out of the lab sessions
 # 
 
-# In[6]:
+# In[7]:
 
 
 import numpy as np
