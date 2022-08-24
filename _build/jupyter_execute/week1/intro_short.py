@@ -61,10 +61,10 @@
 # ```
 
 # ## Reading Comprehension
-# 
-# <div>
-# <img src="../img/comprehension.png" width="1200"/>
-# </div>
+# ```{image} ../img/comprehension.png
+# :width: 1200px
+# :align: center
+# ```
 
 # ## Personal Assistants
 # <table><tr>
