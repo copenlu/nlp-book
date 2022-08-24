@@ -28,7 +28,7 @@
 
 # ## Machine Translation
 # 
-# ![mt](../img/mt.png)
+# ![mt](mt_figures/avocado.png)
 # 
 # http://translate.google.com/
 
@@ -45,13 +45,26 @@
 # ![gen](../img/shirtless.jpeg)
 
 # ## Summarisation
-# ![gen](../img/summarization2.png)
+# <div>
+# <img src="../img/summarization2.png" width="1400"/>
+# </div>
 
 # ## Question Answering
-# ![gen](../img/qa2.png)
+# <div>
+# <img src="../img/qa.png" width="400"/>
+# </div>
+# <div>
+# <img src="../img/qa2.png" width="900"/>
+# </div>
+# <div style="text-align: right;">
+# <a href="https://doi.org/10.1016/j.artint.2012.06.009">Ferrucci et al. (2013)</a>
+# </div>
 
-# ## Machine Comprehension
-# ![gen](../img/comprehension.png)
+# ## Reading Comprehension
+# 
+# <div>
+# <img src="../img/comprehension.png" width="1200"/>
+# </div>
 
 # ## Personal Assistants
 # <table><tr>
@@ -61,7 +74,9 @@
 
 # ## What is difficult about NLP?
 # 
-# Discuss and enter your answers here: https://tinyurl.com/kef4ptz4
+# Discuss and enter your answers here: https://ucph.page.link/nlp_q1
+# 
+# ([Responses](https://docs.google.com/forms/d/121VI1BeO1TWuWXnAeQbHcBdMazQ3rPivoko29YyrZz4/edit#responses))
 
 # ### Ambiguity Everywhere
 # 
@@ -84,7 +99,7 @@
 # Jane ate spaghetti in the presence of a silver spoon? (**company**)
 
 # ### Ambiguity on different linguistic levels
-# ![gen](../img/nlp_pyramid.png)
+# 
 # <img src="../img/nlp_pyramid.png" style="float:left;" width=45%></img>
 
 # ## Core NLP Tasks
