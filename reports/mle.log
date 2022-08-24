@@ -17,24 +17,51 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from sklearn.feature_extraction.text import CountVectorizer
+import matplotlib.pyplot as plt
+import mpld3
+import numpy as np
 
-def featTransform(sents_train, sents_test):
-    cv = CountVectorizer()
-    cv.fit(sents_train)
-    print(cv.get_params())
-    features_train = cv.transform(sents_train)
-    features_test = cv.transform(sents_test)
-    return features_train, features_test, cv
+N = 100
+eps = 0.0001
+x = np.linspace(eps, 1.0 - eps, N)
+y = np.linspace(eps, 1.0 - eps, N)
+
+xx, yy = np.meshgrid(x, y)
+
+def create_ll_plot(data):
+    np_ll = np.vectorize(lambda t1,t2: ll_2_greasy(data, {r:t1, p:t2}))
+    z = np_ll(xx,yy)
+    fig = plt.figure()
+    levels = np.arange(-2., -0.1, 0.25 )
+    optimal_theta = mle_2_greasy(data)
+    optimal_loss = ll_2_greasy(data, optimal_theta)
+    levels_before = np.arange(optimal_loss - 2.0, optimal_loss, 0.25)
+    levels_after = np.arange(optimal_loss, min(optimal_loss+2.0,-0.1), 0.25)
+    contour = plt.contour(x, y, z, levels=np.concatenate([levels_before,levels_after]))
+    plt.xlabel('rice')
+    plt.ylabel('pizza')
+    plt.plot(x,1 - x)
+    plt.plot([optimal_theta[r]],[optimal_theta[p]],'ro')
+    plt.clabel(contour)
+    return mpld3.display(fig)
+
+datasets = [
+        [(g,p)] * 1 + [(g,r)] * 3,
+        [(g,p)] * 1 + [(g,r)] * 1,
+        [(g,p)] * 3 + [(g,r)] * 1
+]
+
+util.Carousel([create_ll_plot(d) for d in datasets])
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Input [0;32mIn [12][0m, in [0;36m<cell line: 1>[0;34m()[0m
-[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01msklearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mfeature_extraction[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtext[39;00m [38;5;28;01mimport[39;00m CountVectorizer
-[1;32m      3[0m [38;5;28;01mdef[39;00m [38;5;21mfeatTransform[39m(sents_train, sents_test):
-[1;32m      4[0m     cv [38;5;241m=[39m CountVectorizer()
+Input [0;32mIn [7][0m, in [0;36m<cell line: 2>[0;34m()[0m
+[1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[0;32m----> 2[0m [38;5;28;01mimport[39;00m [38;5;21;01mmpld3[39;00m
+[1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[1;32m      5[0m N [38;5;241m=[39m [38;5;241m100[39m
 
-[0;31mModuleNotFoundError[0m: No module named 'sklearn'
-ModuleNotFoundError: No module named 'sklearn'
+[0;31mModuleNotFoundError[0m: No module named 'mpld3'
+ModuleNotFoundError: No module named 'mpld3'
 

@@ -17,24 +17,19 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from sklearn.feature_extraction.text import CountVectorizer
+theta1 = create_theta(0.3, 0.7, 0.0, 0.3, 0.7, 1.0, 0.0, 0.0)
+theta2 = create_theta(0.3, 0.7, 1.0, 0.0, 0.0, 0.0, 0.3, 0.7)
 
-def featTransform(sents_train, sents_test):
-    cv = CountVectorizer()
-    cv.fit(sents_train)
-    print(cv.get_params())
-    features_train = cv.transform(sents_train)
-    features_test = cv.transform(sents_test)
-    return features_train, features_test, cv
+em.plot_1D(lambda theta: marginal_ll(dataset, theta), theta1, theta2, ylim=[-8.5,-5.5])
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Input [0;32mIn [12][0m, in [0;36m<cell line: 1>[0;34m()[0m
-[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01msklearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mfeature_extraction[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtext[39;00m [38;5;28;01mimport[39;00m CountVectorizer
-[1;32m      3[0m [38;5;28;01mdef[39;00m [38;5;21mfeatTransform[39m(sents_train, sents_test):
-[1;32m      4[0m     cv [38;5;241m=[39m CountVectorizer()
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Input [0;32mIn [5][0m, in [0;36m<cell line: 4>[0;34m()[0m
+[1;32m      1[0m theta1 [38;5;241m=[39m create_theta([38;5;241m0.3[39m, [38;5;241m0.7[39m, [38;5;241m0.0[39m, [38;5;241m0.3[39m, [38;5;241m0.7[39m, [38;5;241m1.0[39m, [38;5;241m0.0[39m, [38;5;241m0.0[39m)
+[1;32m      2[0m theta2 [38;5;241m=[39m create_theta([38;5;241m0.3[39m, [38;5;241m0.7[39m, [38;5;241m1.0[39m, [38;5;241m0.0[39m, [38;5;241m0.0[39m, [38;5;241m0.0[39m, [38;5;241m0.3[39m, [38;5;241m0.7[39m)
+[0;32m----> 4[0m [43mem[49m[38;5;241m.[39mplot_1D([38;5;28;01mlambda[39;00m theta: marginal_ll(dataset, theta), theta1, theta2, ylim[38;5;241m=[39m[[38;5;241m-[39m[38;5;241m8.5[39m,[38;5;241m-[39m[38;5;241m5.5[39m])
 
-[0;31mModuleNotFoundError[0m: No module named 'sklearn'
-ModuleNotFoundError: No module named 'sklearn'
+[0;31mNameError[0m: name 'em' is not defined
+NameError: name 'em' is not defined
 

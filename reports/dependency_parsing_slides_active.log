@@ -17,24 +17,34 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from sklearn.feature_extraction.text import CountVectorizer
-
-def featTransform(sents_train, sents_test):
-    cv = CountVectorizer()
-    cv.fit(sents_train)
-    print(cv.get_params())
-    features_train = cv.transform(sents_train)
-    features_test = cv.transform(sents_test)
-    return features_train, features_test, cv
+conllu = """
+# ID	FORM	LEMMA	UPOS	XPOS	FEATS	HEAD	DEPREL	DEPS	MISC
+1	I	_	_	_	_	2	nsubj	_	_
+2	saw	_	_	_	_	0	root	_	_
+3	the	_	_	_	_	4	det	_	_
+4	star	_	_	_	_	2	dobj	_	_
+5	with	_	_	_	_	7	case	_	_
+6	the	_	_	_	_	7	det	_	_
+7	telescope	_	_	_	_	2	obl	_	_
+"""
+# display(HTML(pd.read_csv(StringIO(conllu), sep="\t").to_html(index=False)))
+arcs, tokens = to_displacy_graph(*load_arcs_tokens(conllu))
+render_displacy(arcs, tokens,"2400px")
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Input [0;32mIn [12][0m, in [0;36m<cell line: 1>[0;34m()[0m
-[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01msklearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mfeature_extraction[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtext[39;00m [38;5;28;01mimport[39;00m CountVectorizer
-[1;32m      3[0m [38;5;28;01mdef[39;00m [38;5;21mfeatTransform[39m(sents_train, sents_test):
-[1;32m      4[0m     cv [38;5;241m=[39m CountVectorizer()
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Input [0;32mIn [4][0m, in [0;36m<cell line: 12>[0;34m()[0m
+[1;32m      1[0m conllu [38;5;241m=[39m [38;5;124m"""[39m
+[1;32m      2[0m [38;5;124m# ID	FORM	LEMMA	UPOS	XPOS	FEATS	HEAD	DEPREL	DEPS	MISC[39m
+[1;32m      3[0m [38;5;124m1	I	_	_	_	_	2	nsubj	_	_[39m
+[0;32m   (...)[0m
+[1;32m      9[0m [38;5;124m7	telescope	_	_	_	_	2	obl	_	_[39m
+[1;32m     10[0m [38;5;124m"""[39m
+[1;32m     11[0m [38;5;66;03m# display(HTML(pd.read_csv(StringIO(conllu), sep="\t").to_html(index=False)))[39;00m
+[0;32m---> 12[0m arcs, tokens [38;5;241m=[39m [43mto_displacy_graph[49m([38;5;241m*[39mload_arcs_tokens(conllu))
+[1;32m     13[0m render_displacy(arcs, tokens,[38;5;124m"[39m[38;5;124m2400px[39m[38;5;124m"[39m)
 
-[0;31mModuleNotFoundError[0m: No module named 'sklearn'
-ModuleNotFoundError: No module named 'sklearn'
+[0;31mNameError[0m: name 'to_displacy_graph' is not defined
+NameError: name 'to_displacy_graph' is not defined
 

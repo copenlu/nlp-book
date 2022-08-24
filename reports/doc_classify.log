@@ -1,0 +1,41 @@
+Traceback (most recent call last):
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+def plot_top_k(alpha, label='pos', k=10):
+    positive_words = [w for (w,y) in alpha.keys() if y == label]
+    sorted_positive_words = sorted(positive_words, key=lambda w:-alpha[w,label])[:k]
+    util.plot_bar_graph([alpha[w,label] for w in sorted_positive_words],sorted_positive_words,rotation=45)
+plot_top_k(alpha)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Input [0;32mIn [7][0m, in [0;36m<cell line: 5>[0;34m()[0m
+[1;32m      3[0m     sorted_positive_words [38;5;241m=[39m [38;5;28msorted[39m(positive_words, key[38;5;241m=[39m[38;5;28;01mlambda[39;00m w:[38;5;241m-[39malpha[w,label])[:k]
+[1;32m      4[0m     util[38;5;241m.[39mplot_bar_graph([alpha[w,label] [38;5;28;01mfor[39;00m w [38;5;129;01min[39;00m sorted_positive_words],sorted_positive_words,rotation[38;5;241m=[39m[38;5;241m45[39m)
+[0;32m----> 5[0m [43mplot_top_k[49m[43m([49m[43malpha[49m[43m)[49m
+
+Input [0;32mIn [7][0m, in [0;36mplot_top_k[0;34m(alpha, label, k)[0m
+[1;32m      2[0m positive_words [38;5;241m=[39m [w [38;5;28;01mfor[39;00m (w,y) [38;5;129;01min[39;00m alpha[38;5;241m.[39mkeys() [38;5;28;01mif[39;00m y [38;5;241m==[39m label]
+[1;32m      3[0m sorted_positive_words [38;5;241m=[39m [38;5;28msorted[39m(positive_words, key[38;5;241m=[39m[38;5;28;01mlambda[39;00m w:[38;5;241m-[39malpha[w,label])[:k]
+[0;32m----> 4[0m [43mutil[49m[38;5;241m.[39mplot_bar_graph([alpha[w,label] [38;5;28;01mfor[39;00m w [38;5;129;01min[39;00m sorted_positive_words],sorted_positive_words,rotation[38;5;241m=[39m[38;5;241m45[39m)
+
+[0;31mNameError[0m: name 'util' is not defined
+NameError: name 'util' is not defined
+
