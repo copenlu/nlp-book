@@ -2,7 +2,7 @@
 
 This week we are going to learn about the basics of modern NLP. Specifically, in the lectures we will cover:
 
-- Introduction to NLP
+- [Introduction to NLP] (week1/intro_short.ipynb)
 - Tokenisation and sentence splitting
 - Text classification
 
