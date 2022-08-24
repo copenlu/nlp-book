@@ -11,6 +11,7 @@ parts:
         - file: week1/course_logistics
         - file: week1/intro_short
         - file: week1/lab_1
+        - file: markdown-notebooks
 
   - caption: External Material
     chapters:
