@@ -3,7 +3,7 @@
 
 # # Course Logistics
 
-# # NDAK18000U Overview
+# ### NDAK18000U Overview
 # content at [https://www.copenlu.com/nlp-book](https://www.copenlu.com/nlp-book)
 
 # ### NDAK18000U Details
@@ -233,16 +233,16 @@ plt.show()
 
 
 # ### Course Materials
-# * We will be using the [stat-nlp-book](../overview.ipynb) project. 
+# * We will be using the [stat-nlp-book](https://www.copenlu.com/nlp-book) book. 
 # * Contains **interactive** [jupyter](http://jupyter.org/) notes and slides
 #     * View statically [here](https://nbviewer.jupyter.org/github/copenlu/stat-nlp-book/blob/master/overview.ipynb)
-#     * Use interactively via install, see [github repo](https://github.com/copenlu/stat-nlp-book) instructions  
+#     * Use interactively via Google Colab or localy, see [github repo](https://github.com/copenlu/stat-nlp-book) instructions  
 # * References to other material are given in context.
 # * This is work in progress.
 #     * Course materials are adapted from a [course that Isabelle co-taught at UCL](https://github.com/uclmr/stat-nlp-book) (course organiser: [Sebastian Riedel](http://www.riedelcastro.org/))
-#     * Use `git pull` regularly for updates
+#     * Check the website regularly for updates
 #     * *Watch* for updates
-#     * Please contribute by adding issues on github when you see errors
+#     * Please contribute by adding issues on github when you see errors (use the button in the upper right corner)
 # * For assignment hand-in, announcements, discussion forum, check [Absalon](https://absalon.instructure.com/courses/61339)
 
 # ### Teaching Methods
@@ -302,16 +302,6 @@ plt.show()
 # * Don't do it
 # * Don't enable it
 # * Check [rules and consequences](https://student-ambassador.ku.dk/rights/avoid-plagiarism/) if unclear
-
-# ### Docker
-# 
-# * The book and tutorials run in a [docker](https://www.docker.com/) container
-# * Container comes with all dependencies pre-installed
-# * You can install it on your machine or on Azure/AWS machines
-# * We provide no support for non-docker installations
-# * We recommend you use this container for your assignment
-#    * Contains all core software packages for solving the assignment
-#    * You may use additional packages if needed
 
 # ### Python
 # 
