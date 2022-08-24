@@ -103,8 +103,11 @@
 # Jane ate spaghetti in the presence of a silver spoon? (**company**)
 
 # ### Ambiguity on different linguistic levels
+# ```{figure} ../img/nlp_pyramid.png
+# :width: 45%
+# :style: "float:left;"
+# ```
 # 
-# <img src="../img/nlp_pyramid.png" style="float:left;" width=45%></img>
 
 # ## Core NLP Tasks
 # * Tokenisation, Segmentation
