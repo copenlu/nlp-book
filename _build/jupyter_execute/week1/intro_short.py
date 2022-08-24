@@ -105,7 +105,6 @@
 # ### Ambiguity on different linguistic levels
 # ```{figure} ../img/nlp_pyramid.png
 # :width: 45%
-# :style: "float:left;"
 # ```
 # 
 
