@@ -7,7 +7,7 @@
 get_ipython().run_cell_magic('html', '', '<script>\n  function code_toggle() {\n    if (code_shown){\n      $(\'div.input\').hide(\'500\');\n      $(\'#toggleButton\').val(\'Show Code\')\n    } else {\n      $(\'div.input\').show(\'500\');\n      $(\'#toggleButton\').val(\'Hide Code\')\n    }\n    code_shown = !code_shown\n  }\n\n  $( document ).ready(function(){\n    code_shown=false;\n    $(\'div.input\').hide()\n  });\n</script>\n<form action="javascript:code_toggle()"><input type="submit" id="toggleButton" value="Show Code"></form>\n')
 
 
-# In[2]:
+# In[1]:
 
 
 # Reveal.js
@@ -21,7 +21,7 @@ cm.update('livereveal', {
 })
 
 
-# In[3]:
+# In[1]:
 
 
 get_ipython().run_cell_magic('html', '', '<script>\n  function code_toggle() {\n    if (code_shown){\n      $(\'div.input\').hide(\'500\');\n      $(\'#toggleButton\').val(\'Show Code\')\n    } else {\n      $(\'div.input\').show(\'500\');\n      $(\'#toggleButton\').val(\'Hide Code\')\n    }\n    code_shown = !code_shown\n  }\n\n  $( document ).ready(function(){\n    code_shown=false;\n    $(\'div.input\').hide()\n  });\n</script>\n<form action="javascript:code_toggle()"><input type="submit" id="toggleButton" value="Show Code"></form>\n')
@@ -388,7 +388,7 @@ get_ipython().run_cell_magic('html', '', '<script>\n  function code_toggle() {\n
 # Some basic code at https://huggingface.co/pytorch-transformers/
 # 
 
-# In[4]:
+# In[1]:
 
 
 import torch

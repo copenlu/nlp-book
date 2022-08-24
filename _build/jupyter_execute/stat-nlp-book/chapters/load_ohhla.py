@@ -6,7 +6,7 @@
 # 
 # We provide the corpus in the `data` directory. As this notebook lives in a sub-directory itself, we access it via `../data`. Before preprocessing all files and provide *generic* loaders it is useful to inspect the format of the files based on a specific example file, and work on the loading process in this context. Here we look at `/data/ohhla/train/www.ohhla.com/anonymous/j_live/SPTA/authentc.jlv.txt`.  
 
-# In[1]:
+# In[2]:
 
 
 with open('../data/ohhla/train/www.ohhla.com/anonymous/j_live/allabove/satisfy.jlv.txt.html', 'r') as f:
@@ -18,7 +18,7 @@ lines
 
 # We first would like to remove everything outside of the `<pre>` tag, and then remove the meta information.
 
-# In[2]:
+# In[3]:
 
 
 def find_lyrics(lines):
@@ -41,7 +41,7 @@ lyrics[:10]
 
 # Finally, we would like to convert the list of lines with newline characters to a single string, as this will be easier to process for our language models. We will also mark lyrical "bars" (lines) using a `BAR` tag to still capture the rhythmical structure in the song.
 
-# In[3]:
+# In[4]:
 
 
 string = '[BAR]' + '[/BAR][BAR]'.join(lyrics) + '[/BAR]'
@@ -50,7 +50,7 @@ string[:500]
 
 # We are now ready to provide a loading function. 
 
-# In[4]:
+# In[5]:
 
 
 def load_song(file_name):
@@ -79,7 +79,7 @@ song[:500]
 
 # Now we want to load several files from an album directory. 
 
-# In[5]:
+# In[6]:
 
 
 from os import listdir
@@ -97,7 +97,7 @@ songs = load_album('../data/ohhla/train/www.ohhla.com/anonymous/j_live/SPTA/')
 
 # We will also make it easy to load several albums. Then, for a few artists we provide short cuts to the album directories we care about. 
 
-# In[6]:
+# In[7]:
 
 
 def load_albums(album_paths):
@@ -115,7 +115,7 @@ len(load_albums(j_live))
 
 # It will be useful to convert a list of documents into a flat list of tokens. Based on the approach showed in the [tokenisation chapter](todo) we can do this as follows:
 
-# In[7]:
+# In[17]:
 
 
 import re
@@ -130,7 +130,7 @@ song_words[:20]
 
 # Finally we provide a function that can load all songs within a top-level directory.
 
-# In[8]:
+# In[10]:
 
 
 def load_all_songs(path):

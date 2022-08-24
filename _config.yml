@@ -4,11 +4,12 @@
 title:  Stat-NLP Book
 author: Nadav Borenstein (and his minions)
 logo: logo_ku.png
+copyright: "2022"
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: auto
 
 # Define the name of the latex output file for PDF builds
 latex:
