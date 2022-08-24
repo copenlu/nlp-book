@@ -67,10 +67,6 @@
 # ```
 
 # ## Personal Assistants
-# ````{panels}
-# :container: container-fluid 
-# :column: col-lg-6 col-md-6 col-sm-6 col-xs-12 
-# :card: shadow-none border-0
 # 
 # ```{figure} ../img/siri1.png
 # :width: 500px
@@ -79,7 +75,6 @@
 # ```{figure} ../img/siri1.png
 # :width: 500px
 # ```
-# ````
 
 # ## What is difficult about NLP?
 # 
