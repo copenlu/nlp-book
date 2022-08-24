@@ -43,6 +43,6 @@ Input [0;32mIn [4][0m, in [0;36msanity_check[0;34m(lm, *history)[0m
 [1;32m      4[0m probability_mass [38;5;241m=[39m [38;5;28msum[39m([lm[38;5;241m.[39mprobability(word, [38;5;241m*[39mhistory) [38;5;28;01mfor[39;00m word [38;5;129;01min[39;00m lm[38;5;241m.[39mvocab])
 [0;32m----> 5[0m [38;5;28;01massert[39;00m [38;5;28mabs[39m(probability_mass [38;5;241m-[39m [38;5;241m1.0[39m) [38;5;241m<[39m [38;5;241m1e-6[39m, probability_mass
 
-[0;31mAssertionError[0m: 1.0661659877800445
-AssertionError: 1.0661659877800445
+[0;31mAssertionError[0m: 1.0661659877800467
+AssertionError: 1.0661659877800467
 
