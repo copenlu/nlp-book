@@ -30,6 +30,8 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  favicon: logo_ku.png # A path to a favicon image
+
 
 launch_buttons:
   colab_url: "https://colab.research.google.com"
