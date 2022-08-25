@@ -67,14 +67,11 @@
 # ```
 
 # ## Personal Assistants
+# <table><tr>
+# <td> <img src="../img/siri1.png" alt="Siri1" style="width: 500px;"/> </td>
+# <td> <img src="../img/siri2.png" alt="Siri2" style="width: 500px;"/> </td>
+# </tr></table>
 # 
-# ```{figure} ../img/siri1.png
-# :width: 500px
-# ```
-# ---
-# ```{figure} ../img/siri2.png
-# :width: 500px
-# ```
 
 # ## What is difficult about NLP?
 # 
@@ -103,10 +100,8 @@
 # Jane ate spaghetti in the presence of a silver spoon? (**company**)
 
 # ### Ambiguity on different linguistic levels
-# ```{figure} ../img/nlp_pyramid.png
-# :width: 45%
-# ```
 # 
+# <img src="../img/nlp_pyramid.png" style="float:left;" width=45%></img>
 
 # ## Core NLP Tasks
 # * Tokenisation, Segmentation

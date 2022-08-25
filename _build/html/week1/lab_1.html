@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../_static/logo_ku.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -813,8 +811,8 @@ title="Print to PDF"
 <li><p>Keep one metre’s <strong>distance</strong> from other students</p></li>
 <li><p>Keep two metre’s distance from members of the teaching team when they are presenting</p></li>
 <li><p>Leave the classroom in an <strong>orderly fashion</strong></p></li>
-<li><p>Full COVID-19 guidelines by SCIENCE: <a class="reference external" href="https://kunet.ku.dk/faculty-and-department/science/COVID-19/Pages/default.aspx">https://kunet.ku.dk/faculty-and-department/science/COVID-19/Pages/default.aspx</a></p></li>
-<li><p>Poster with summary of guidelines from SCIENCE: <a class="reference external" href="https://kunet.ku.dk/faculty-and-department/science/COVID-19/Documents/app%201%20poster%20generel%20guidelines%20200821.pptx">https://kunet.ku.dk/faculty-and-department/science/COVID-19/Documents/app 1 poster generel guidelines 200821.pptx</a></p></li>
+<li><p>Full COVID-19 guidelines by SCIENCE: https://kunet.ku.dk/faculty-and-department/science/COVID-19/Pages/default.aspx</p></li>
+<li><p>Poster with summary of guidelines from SCIENCE: https://kunet.ku.dk/faculty-and-department/science/COVID-19/Documents/app%201%20poster%20generel%20guidelines%20200821.pptx</p></li>
 </ul>
 </section>
 </section>
@@ -860,10 +858,12 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: nltk in /Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages (3.7)
-Requirement already satisfied: regex&gt;=2021.8.3 in /Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages (from nltk) (2022.6.2)
-Requirement already satisfied: click in /Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages (from nltk) (8.1.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: click in /Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages (from nltk) (8.1.3)
 Requirement already satisfied: tqdm in /Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages (from nltk) (4.64.0)
 Requirement already satisfied: joblib in /Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages (from nltk) (1.1.0)
+Requirement already satisfied: regex&gt;=2021.8.3 in /Users/knf792/miniconda3/envs/nlp-course/lib/python3.10/site-packages (from nltk) (2022.6.2)
 </pre></div>
 </div>
 </div>
@@ -901,7 +901,7 @@ Requirement already satisfied: joblib in /Users/knf792/miniconda3/envs/nlp-cours
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.66 ms, sys: 4.62 ms, total: 7.28 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.65 ms, sys: 2.08 ms, total: 3.73 ms
 Wall time: 10 s
 </pre></div>
 </div>
@@ -967,14 +967,14 @@ Notebooks are dangerous unless you run each cell exactly once and sequentially!<
 <p>This is especially good to do before sharing your notebook with someone else.</p>
 <p>References:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.dataquest.io/blog/jupyter-notebook-tutorial/">https://www.dataquest.io/blog/jupyter-notebook-tutorial/</a></p></li>
-<li><p><a class="reference external" href="https://nbviewer.jupyter.org/github/cgpotts/cs224u/blob/master/tutorial_jupyter_notebooks.ipynb">https://nbviewer.jupyter.org/github/cgpotts/cs224u/blob/master/tutorial_jupyter_notebooks.ipynb</a></p></li>
+<li><p>https://www.dataquest.io/blog/jupyter-notebook-tutorial/</p></li>
+<li><p>https://nbviewer.jupyter.org/github/cgpotts/cs224u/blob/master/tutorial_jupyter_notebooks.ipynb</p></li>
 </ul>
 </section>
 </section>
 <hr class="docutils" />
 <section id="introduction-to-colab-https-colab-research-google-com">
-<h2>Introduction to Colab <a class="reference external" href="https://colab.research.google.com/">https://colab.research.google.com/</a><a class="headerlink" href="#introduction-to-colab-https-colab-research-google-com" title="Permalink to this headline">#</a></h2>
+<h2>Introduction to Colab https://colab.research.google.com/<a class="headerlink" href="#introduction-to-colab-https-colab-research-google-com" title="Permalink to this headline">#</a></h2>
 <p>Colab allows to run notebooks on the Google Cloud with free access to GPUs and TPUs. You can run the same commands reviewed above in Colab as well.</p>
 <p>The notebooks can be shared with other people and you can leave comments and control permissions on it.</p>
 <p>To run the notebook on GPU/TPU you have to select from the menu Runtime-&gt;Change Runtime type, which will be None (CPU) by default.</p>
@@ -1074,9 +1074,9 @@ Notebooks are dangerous unless you run each cell exactly once and sequentially!<
 </div>
 <p>References:</p>
 <ul class="simple">
-<li><p>Colab guides and examples : <a class="reference external" href="https://colab.research.google.com/notebooks/intro.ipynb?hl=en">https://colab.research.google.com/notebooks/intro.ipynb?hl=en</a></p></li>
-<li><p>Integration with GitHub: <a class="reference external" href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb#scrollTo=WzIRIt9d2huC">https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb#scrollTo=WzIRIt9d2huC</a></p></li>
-<li><p>External data handling: <a class="reference external" href="https://colab.research.google.com/notebooks/io.ipynb#scrollTo=G5IVmR8S9SeF">https://colab.research.google.com/notebooks/io.ipynb#scrollTo=G5IVmR8S9SeF</a></p></li>
+<li><p>Colab guides and examples : https://colab.research.google.com/notebooks/intro.ipynb?hl=en</p></li>
+<li><p>Integration with GitHub: https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb#scrollTo=WzIRIt9d2huC</p></li>
+<li><p>External data handling: https://colab.research.google.com/notebooks/io.ipynb#scrollTo=G5IVmR8S9SeF</p></li>
 </ul>
 </section>
 </section>
@@ -1096,7 +1096,7 @@ Notebooks are dangerous unless you run each cell exactly once and sequentially!<
 <h2>stat-nlp-book setup<a class="headerlink" href="#stat-nlp-book-setup" title="Permalink to this headline">#</a></h2>
 <section id="on-your-personal-computer">
 <h3>On your personal computer<a class="headerlink" href="#on-your-personal-computer" title="Permalink to this headline">#</a></h3>
-<p>Go to <a class="reference external" href="https://github.com/copenlu/stat-nlp-book">https://github.com/copenlu/stat-nlp-book</a> and follow the readme to set up the stat-nlp-book.</p>
+<p>Go to https://github.com/copenlu/stat-nlp-book and follow the readme to set up the stat-nlp-book.</p>
 </section>
 <section id="on-microsoft-azure">
 <h3>On Microsoft Azure<a class="headerlink" href="#on-microsoft-azure" title="Permalink to this headline">#</a></h3>
@@ -1383,17 +1383,17 @@ In French, words originally composed of more than one lexical unit that nowadays
 <section id="references">
 <h4>References:<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
-<li><p>Introduction to Spacy and its features: <a class="reference external" href="https://spacy.io/usage/spacy-101">https://spacy.io/usage/spacy-101</a></p></li>
-<li><p>NLTK tokenization functionalities: <a class="reference external" href="https://www.nltk.org/api/nltk.tokenize.html">https://www.nltk.org/api/nltk.tokenize.html</a></p></li>
-<li><p>On rules and different languages: <a class="reference external" href="http://ceur-ws.org/Vol-2226/paper9.pdf">http://ceur-ws.org/Vol-2226/paper9.pdf</a></p></li>
-<li><p>Why do we need language-specific tokenization: <a class="reference external" href="https://stackoverflow.com/questions/17314506/why-do-i-need-a-tokenizer-for-each-language">https://stackoverflow.com/questions/17314506/why-do-i-need-a-tokenizer-for-each-language</a></p></li>
+<li><p>Introduction to Spacy and its features: https://spacy.io/usage/spacy-101</p></li>
+<li><p>NLTK tokenization functionalities: https://www.nltk.org/api/nltk.tokenize.html</p></li>
+<li><p>On rules and different languages: http://ceur-ws.org/Vol-2226/paper9.pdf</p></li>
+<li><p>Why do we need language-specific tokenization: https://stackoverflow.com/questions/17314506/why-do-i-need-a-tokenizer-for-each-language</p></li>
 </ul>
 </section>
 </section>
 </section>
 <hr class="docutils" />
 <section id="introduction-to-pytorch-https-pytorch-org">
-<h2>Introduction to PyTorch <a class="reference external" href="https://pytorch.org/">https://pytorch.org/</a><a class="headerlink" href="#introduction-to-pytorch-https-pytorch-org" title="Permalink to this headline">#</a></h2>
+<h2>Introduction to PyTorch https://pytorch.org/<a class="headerlink" href="#introduction-to-pytorch-https-pytorch-org" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
@@ -1461,9 +1461,9 @@ In French, words originally composed of more than one lexical unit that nowadays
 <h3>Custom Classifier<a class="headerlink" href="#custom-classifier" title="Permalink to this headline">#</a></h3>
 <p>Our classifier inherits from the <code class="docutils literal notranslate"><span class="pre">nn.Module</span></code> class which provides an interface to important methods used for constructing and working with our models.</p>
 <p>Here, we will implement a custom multi-layer feed forward neural network. In our example, we calculate:
-$<span class="math notranslate nohighlight">\( 
+$$
 y = final(nonlinear(linear(BoW))
-\)</span>$
+$$
 where nonlinear denotes a non-linear function (we use <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.ReLU.html"><code class="docutils literal notranslate"><span class="pre">nn.ReLU</span></code></a>) and the first and final layer are both linear functions implemented with<code class="docutils literal notranslate"><span class="pre">nn.Linear</span></code>. In practice, we create a <code class="docutils literal notranslate"><span class="pre">nn.Module</span></code> containing the definition of our model architecture in the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function. The <code class="docutils literal notranslate"><span class="pre">__forward__</span></code> function defines how tensors are processed by our model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1639,8 +1639,8 @@ tensor([[-1.5922,  0.9361]])
 <h3>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>PyTorch Tutorials:
-<a class="reference external" href="https://pytorch.org/tutorials/index.html">https://pytorch.org/tutorials/index.html</a></p></li>
-<li><p>Introduction to Pytorch notebook from Stanford: <a class="reference external" href="https://nbviewer.jupyter.org/github/cgpotts/cs224u/blob/master/tutorial_pytorch.ipynb">https://nbviewer.jupyter.org/github/cgpotts/cs224u/blob/master/tutorial_pytorch.ipynb</a></p></li>
+https://pytorch.org/tutorials/index.html</p></li>
+<li><p>Introduction to Pytorch notebook from Stanford: https://nbviewer.jupyter.org/github/cgpotts/cs224u/blob/master/tutorial_pytorch.ipynb</p></li>
 </ul>
 </section>
 </section>
