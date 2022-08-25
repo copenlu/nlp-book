@@ -504,7 +504,7 @@ title="Print to PDF"
 <li><p>separation of <code class="docutils literal notranslate"><span class="pre">n't</span></code> from the rest of the word (question: why?)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">'ll</span></code> <code class="docutils literal notranslate"><span class="pre">'m</span></code> (question: why?)</p></li>
 </ul>
-<p>Should you need additional help on regular expressions, check <a class="reference external" href="https://regex101.com/">https://regex101.com/</a></p>
+<p>Should you need additional help on regular expressions, check https://regex101.com/</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">token</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;[\w]+(?=n&#39;t)|n&#39;t|</span><span class="se">\&#39;</span><span class="s2">m|</span><span class="se">\&#39;</span><span class="s2">ll|[\w]+|[.?!;,\-\(\)—\:&#39;]&quot;</span><span class="p">)</span>
@@ -554,7 +554,7 @@ title="Print to PDF"
 <p>We first make sure to account for:</p>
 <ul class="simple">
 <li><p>URLs</p></li>
-<li><p>abbreviations (U.S.A., <a class="reference external" href="http://M.Sc">M.Sc</a>., etc.)</p></li>
+<li><p>abbreviations (U.S.A., M.Sc., etc.)</p></li>
 <li><p>elipsis (…)</p></li>
 <li><p>question and exclamation mark, and their composition as a single token</p></li>
 </ul>

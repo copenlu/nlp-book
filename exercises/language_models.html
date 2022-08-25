@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../_static/logo_ku.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -551,8 +549,7 @@ title="Print to PDF"
 <!---
 Latex Macros
 -->
-<div class="math notranslate nohighlight">
-\[
+<p>$$
 \newcommand{\prob}{p}
 \newcommand{\vocab}{V}
 \newcommand{\params}{\boldsymbol{\theta}}
@@ -560,8 +557,8 @@ Latex Macros
 \DeclareMathOperator{\perplexity}{PP}
 \DeclareMathOperator{\argmax}{argmax}
 \newcommand{\train}{\mathcal{D}}
-\newcommand{\counts}[2]{\#_{#1}(#2) }
-\]</div>
+\newcommand{\counts}[2]{#_{#1}(#2) }
+$$</p>
 </section>
 <section id="font-color-green-setup-2-font-load-data">
 <h2><font color='green'>Setup 2</font>: Load Data<a class="headerlink" href="#font-color-green-setup-2-font-load-data" title="Permalink to this headline">#</a></h2>
@@ -650,7 +647,7 @@ You don’t need 1st or 2nd order derivatives in this case, only the gradient de
 </section>
 <section id="font-color-blue-task-3-font-subtract-count-lm">
 <h2><font color='blue'>Task 3</font>: Subtract Count LM<a class="headerlink" href="#font-color-blue-task-3-font-subtract-count-lm" title="Permalink to this headline">#</a></h2>
-<p>Develop and implement a language model that subtracts a count <span class="math notranslate nohighlight">\(d\in[0,1]\)</span> from each non-zero count in the training set. Let’s first formalise this:</p>
+<p>Develop and implement a language model that subtracts a count $d\in[0,1]$ from each non-zero count in the training set. Let’s first formalise this:</p>
 <p>\begin{align}
 #<em>{w=0}(h_n) &amp;= \sum</em>{w \in V} \mathbf{1}[\counts{\train}{h_n,w} = 0]\
 #<em>{w&gt;0}(h_n) &amp;= \sum</em>{w \in V} \mathbf{1}[\counts{\train}{h_n,w} &gt; 0]\

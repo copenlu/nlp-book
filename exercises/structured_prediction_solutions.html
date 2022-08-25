@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../_static/logo_ku.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -499,8 +497,7 @@ title="Print to PDF"
   <!---
 Latex Macros
 -->
-<div class="math notranslate nohighlight">
-\[
+<p>$$
 \newcommand{\Xs}{\mathcal{X}}
 \newcommand{\Ys}{\mathcal{Y}}
 \newcommand{\y}{\mathbf{y}}
@@ -514,9 +511,9 @@ Latex Macros
 \DeclareMathOperator{\argmax}{argmax}
 \DeclareMathOperator{\argmin}{argmin}
 \newcommand{\train}{\mathcal{D}}
-\newcommand{\counts}[2]{\#_{#1}(#2) }
+\newcommand{\counts}[2]{#_{#1}(#2) }
 \newcommand{\indi}{\mathbb{I}}
-\]</div>
+$$</p>
 <section class="tex2jax_ignore mathjax_ignore" id="structured-prediction-exercises-solutions">
 <h1>Structured Prediction Exercises - Solutions<a class="headerlink" href="#structured-prediction-exercises-solutions" title="Permalink to this headline">#</a></h1>
 <section id="font-color-green-setup-1-font-load-libraries">
@@ -665,15 +662,14 @@ Latex Macros
 </div>
 </div>
 </div>
-<p>Zero-one loss is a discrete loss, and we’d like to find a smoother one (question: why do we prefer smoother losses?). The problem of finding a smoother loss boils down to finding new types of loss which incorporate score information in loss calculation, specifically, some contrast between the score of a gold output structure <span class="math notranslate nohighlight">\(\y\)</span> of <span class="math notranslate nohighlight">\((\x,\y) \in \train\)</span> and the score of the highest scoring German sentence <span class="math notranslate nohighlight">\(\y'_{\param}=\argmax_\y s_\param(\x,\y)\)</span>, or a combination of multiple scores for several output structures <span class="math notranslate nohighlight">\(\y \in \Ys\)</span>.</p>
+<p>Zero-one loss is a discrete loss, and we’d like to find a smoother one (question: why do we prefer smoother losses?). The problem of finding a smoother loss boils down to finding new types of loss which incorporate score information in loss calculation, specifically, some contrast between the score of a gold output structure $\y$ of $(\x,\y) \in \train$ and the score of the highest scoring German sentence $\y’<em>{\param}=\argmax</em>\y s_\param(\x,\y)$, or a combination of multiple scores for several output structures $\y \in \Ys$.</p>
 <p>There are several different losses one might implement:</p>
 </section>
 <section id="structured-perceptron-loss">
 <h2>Structured perceptron loss<a class="headerlink" href="#structured-perceptron-loss" title="Permalink to this headline">#</a></h2>
-<div class="math notranslate nohighlight">
-\[
-l(\param)=\sum_{(\x,\y) \in \train} (s_\param(\x,\y'_{\param}) - s_\param(\x,\y))
-\]</div>
+<p>$$
+l(\param)=\sum_{(\x,\y) \in \train} (s_\param(\x,\y’<em>{\param}) - s</em>\param(\x,\y))
+$$</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">structured_perceptron_loss</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
@@ -704,10 +700,9 @@ l(\param)=\sum_{(\x,\y) \in \train} (s_\param(\x,\y'_{\param}) - s_\param(\x,\y)
 </section>
 <section id="structured-perceptron-hinge-loss">
 <h2>Structured perceptron hinge loss<a class="headerlink" href="#structured-perceptron-hinge-loss" title="Permalink to this headline">#</a></h2>
-<div class="math notranslate nohighlight">
-\[
-l(\param)=\sum_{(\x,\y) \in \train} (\sum_{\y \in \Ys}(\max(0, s_\param(\x,\y'_{\param}) - s_\param(\x,\y) + \Delta)))
-\]</div>
+<p>$$
+l(\param)=\sum_{(\x,\y) \in \train} (\sum_{\y \in \Ys}(\max(0, s_\param(\x,\y’<em>{\param}) - s</em>\param(\x,\y) + \Delta)))
+$$</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hinge_loss</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="mf">4.0</span><span class="p">):</span>
@@ -734,10 +729,9 @@ l(\param)=\sum_{(\x,\y) \in \train} (\sum_{\y \in \Ys}(\max(0, s_\param(\x,\y'_{
 </section>
 <section id="log-loss">
 <h2>Log loss<a class="headerlink" href="#log-loss" title="Permalink to this headline">#</a></h2>
-<div class="math notranslate nohighlight">
-\[
-l(\param)=\sum_{(\x,\y) \in \train} (log(\sum_{\y \in \Ys} e^{s_\param(\x,\y'_{\param})}) - s_\param(\x,\y))
-\]</div>
+<p>$$
+l(\param)=\sum_{(\x,\y) \in \train} (log(\sum_{\y \in \Ys} e^{s_\param(\x,\y’<em>{\param})}) - s</em>\param(\x,\y))
+$$</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">exp</span><span class="p">,</span> <span class="n">log</span>
